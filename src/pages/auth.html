@@ -10,15 +10,28 @@
 </head>
 <body class="bg-black text-white font-poppins">
   <!-- Header -->
-  <header class="fixed top-0 w-full bg-gray-900 bg-opacity-90 z-10 p-4">
+  <header class="fixed top-0 w-full bg-gray-900 bg-opacity-90 z-50 p-4">
     <div class="container mx-auto flex justify-between items-center px-2">
       <img src="../../assets/logo/logo-anim.gif" alt="OCTRA Logo" class="h-10 logo-anim">
-      <nav class="hidden md:flex space-x-4">
+      <nav class="hidden md:flex space-x-4 items-center">
         <a href="index.html" class="text-white hover:text-purple-400 transition">Home</a>
         <a href="projects.html" class="text-white hover:text-purple-400 transition">Projekte</a>
         <a href="stats.html" class="text-white hover:text-purple-400 transition">Stats</a>
-        <a href="#"><img src="../../assets/icons/discord.svg" alt="Discord" class="h-6 ml-4"></a>
-        <a href="#"><img src="../../assets/icons/github.svg" alt="GitHub" class="h-6"></a>
+        <a href="impressum.html" class="text-white hover:text-purple-400 transition">Impressum</a>
+        <a href="https://x.com" target="_blank"><img src="../../assets/icons/twitter.svg" alt="Twitter/X" class="h-6"></a>
+        <a href="https://linkedin.com" target="_blank"><img src="../../assets/icons/linkedin.svg" alt="LinkedIn" class="h-6"></a>
+        <a href="https://discord.com" target="_blank"><img src="../../assets/icons/discord.svg" alt="Discord" class="h-6"></a>
+        <a href="https://github.com" target="_blank"><img src="../../assets/icons/github.svg" alt="GitHub" class="h-6"></a>
+        <div class="relative">
+          <button id="profile-icon" class="text-white hover:text-purple-400">
+            <img src="../../assets/icons/profile.svg" alt="Profile" class="h-6">
+          </button>
+          <div id="profile-popup" class="hidden absolute right-0 mt-2 w-48 bg-gray-800 rounded-lg shadow-lg z-50 profile-popup">
+            <a href="profile.html" class="block px-4 py-2 text-white hover:bg-gray-700 hover:text-purple-400">Profile</a>
+            <a href="settings.html" class="block px-4 py-2 text-white hover:bg-gray-700 hover:text-purple-400">Settings</a>
+            <button id="logout-button" class="block w-full text-left px-4 py-2 text-white hover:bg-gray-700 hover:text-purple-400">Logout</button>
+          </div>
+        </div>
       </nav>
     </div>
   </header>
@@ -45,7 +58,7 @@
         <div class="input-field card relative">
           <label for="login-password" class="block text-sm text-gray-400">Passwort</label>
           <input type="password" id="login-password" class="input-field w-full bg-gray-800 border-purple-500 rounded-md p-2 text-white placeholder-gray-500 pr-10" required placeholder="••••••••">
-          <button type="button" id="login-password-toggle" class="absolute right-8 top-10 bottom-5 text-gray-400 hover:text-purple-400">
+          <button type="button" id="login-password-toggle" class="absolute right-2 top-9 text-gray-400 hover:text-purple-400">
             <img src="../../assets/icons/eye.svg" alt="Show Password" class="h-5">
           </button>
         </div>
@@ -65,14 +78,14 @@
         <div class="input-field card relative">
           <label for="register-password" class="block text-sm text-gray-400">Passwort</label>
           <input type="password" id="register-password" class="input-field w-full bg-gray-800 border-purple-500 rounded-md p-2 text-white placeholder-gray-500 pr-10" required placeholder="••••••••">
-          <button type="button" id="register-password-toggle" class="absolute right-8 top-10 bottom-5 text-gray-400 hover:text-purple-400">
+          <button type="button" id="register-password-toggle" class="absolute right-2 top-9 text-gray-400 hover:text-purple-400">
             <img src="../../assets/icons/eye.svg" alt="Show Password" class="h-5">
           </button>
         </div>
         <div class="input-field card relative">
           <label for="register-password-confirm" class="block text-sm text-gray-400">Passwort bestätigen</label>
           <input type="password" id="register-password-confirm" class="input-field w-full bg-gray-800 border-purple-500 rounded-md p-2 text-white placeholder-gray-500 pr-10" required placeholder="••••••••">
-          <button type="button" id="register-password-confirm-toggle" class="absolute right-8 top-10 bottom-5 text-gray-400 hover:text-purple-400">
+          <button type="button" id="register-password-confirm-toggle" class="absolute right-2 top-9 text-gray-400 hover:text-purple-400">
             <img src="../../assets/icons/eye.svg" alt="Show Password" class="h-5">
           </button>
         </div>
@@ -108,13 +121,47 @@
         <button id="change-email" class="mt-2 text-purple-400 hover:text-pink-500 w-full text-center">E-Mail-Adresse ändern</button>
       </div>
     </div>
+
+    <!-- Cookie-Consent-Modal -->
+    <div id="cookie-consent-modal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden z-50 pointer-events-none">
+      <div class="card p-8 rounded-lg shadow-lg max-w-md w-full pointer-events-auto">
+        <h2 class="text-2xl font-bold text-purple-500 mb-4 text-center">Datenschutz-Einstellungen</h2>
+        <p class="text-gray-400 mb-4 text-center">Wir verwenden Cookies, um unsere Website zu verbessern. Bitte wähle deine Präferenzen.</p>
+        <div id="cookie-buttons" class="space-y-4">
+          <button id="accept-all-cookies" class="neon-button w-full">Alle akzeptieren</button>
+          <button id="accept-necessary-cookies" class="neon-button w-full">Nur notwendige akzeptieren</button>
+          <button id="customize-cookies" class="neon-button w-full">Einstellungen anpassen</button>
+        </div>
+        <div id="cookie-settings" class="space-y-4 hidden">
+          <div class="flex items-center">
+            <input type="checkbox" id="necessary-cookies" checked disabled class="mr-2">
+            <label for="necessary-cookies" class="text-gray-400">Notwendige Cookies (immer aktiv)</label>
+          </div>
+          <div class="flex items-center">
+            <input type="checkbox" id="analytics-cookies" class="mr-2">
+            <label for="analytics-cookies" class="text-gray-400">Analytics-Cookies</label>
+          </div>
+          <div class="flex items-center">
+            <input type="checkbox" id="marketing-cookies" class="mr-2">
+            <label for="marketing-cookies" class="text-gray-400">Marketing-Cookies</label>
+          </div>
+          <button id="save-cookie-settings" class="neon-button w-full">Einstellungen speichern</button>
+        </div>
+        <p class="text-gray-400 mt-4 text-center">
+          Weitere Infos in unserer <a href="impressum.html#datenschutz" class="text-purple-400 hover:text-pink-500">Datenschutzerklärung</a>.
+        </p>
+      </div>
+    </div>
   </main>
 
   <!-- Mobile-Navbar -->
-  <nav class="fixed bottom-0 w-full bg-gray-900 bg-opacity-90 p-4 flex justify-around md:hidden z-20">
+  <nav class="fixed bottom-0 w-full bg-gray-900 bg-opacity-90 p-4 flex justify-around md:hidden z-50">
     <a href="index.html" class="text-white"><img src="../../assets/icons/home.svg" alt="Home" class="h-6"></a>
     <a href="projects.html" class="text-white"><img src="../../assets/icons/projects.svg" alt="Projekte" class="h-6"></a>
     <a href="stats.html" class="text-white"><img src="../../assets/icons/stats.svg" alt="Stats" class="h-6"></a>
+    <a href="impressum.html" class="text-white"><img src="../../assets/icons/info.svg" alt="Impressum" class="h-6"></a>
+    <a href="https://x.com" target="_blank"><img src="../../assets/icons/twitter.svg" alt="Twitter/X" class="h-6"></a>
+    <button id="profile-icon-mobile" class="text-white"><img src="../../assets/icons/profile.svg" alt="Profile" class="h-6"></button>
   </nav>
 
   <!-- Footer -->
@@ -130,6 +177,7 @@
         <a href="index.html" class="block">Home</a>
         <a href="projects.html" class="block">Projekte</a>
         <a href="stats.html" class="block">Stats</a>
+        <a href="impressum.html" class="block">Impressum</a>
       </div>
       <div>
         <h3 class="text-purple-500 font-bold mb-2">Rechtliches</h3>

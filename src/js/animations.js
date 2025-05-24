@@ -1,21 +1,13 @@
+// src/js/animations.js
 document.addEventListener('DOMContentLoaded', () => {
-  // Seitenübergang
-  document.body.style.opacity = '0';
-  setTimeout(() => {
-    document.body.style.opacity = '1';
-  }, 100);
-  
-  // Scroll-Animation für Karten und Felder
-  const cards = document.querySelectorAll('.card');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        setTimeout(() => {
-          entry.target.classList.add('visible');
-        }, 100);
-      }
+  // Beispiel: Weitere Animationen oder Interaktionen
+  const buttons = document.querySelectorAll('.neon-button');
+  buttons.forEach(button => {
+    button.addEventListener('mouseenter', () => {
+      button.style.boxShadow = '0 0 30px rgba(147, 51, 234, 1), 0 0 60px rgba(236, 72, 153, 0.8)';
     });
-  }, { threshold: 0.1 });
-  
-  cards.forEach(card => observer.observe(card));
+    button.addEventListener('mouseleave', () => {
+      button.style.boxShadow = '0 0 15px rgba(147, 51, 234, 0.5), 0 0 30px rgba(236, 72, 153, 0.3)';
+    });
+  });
 });

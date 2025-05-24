@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OCTRA - Impressum</title>
+  <title>OCTRA - Profil</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../css/custom.css">
   <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -36,50 +36,29 @@
     </div>
   </header>
 
-  <!-- Impressum-Bereich -->
+  <!-- Profil-Bereich -->
   <main class="min-h-screen flex flex-col justify-center items-center bg-black pt-20 pb-20 px-4">
-    <h1 class="text-4xl font-bold text-purple-500 mb-8 text-center card">Impressum</h1>
-    <div class="card p-8 rounded-lg shadow-lg max-w-2xl w-full relative z-20">
-      <section id="impressum">
-        <h2 class="text-2xl font-bold text-purple-500 mb-4">Angaben gemäß § 5 TMG</h2>
-        <p class="text-gray-400 mb-4">
-          <strong>Name:</strong>Jayden Wopperer<br>
-          <strong>Adresse:</strong> Köstlerring 61, 91275 Auerbach, Deutschland<br>
-          <strong>E-Mail:</strong> <a href="mailto:jayden_octra@yahoo.com class="text-purple-400 hover:text-pink-500">kontakt@octra.de</a>
-        </p>
-        <p class="text-gray-400 mb-4">
-          <strong>Vertreten durch:</strong> Jayden Wopperer
-        </p>
-      </section>
+    <h1 class="text-4xl font-bold text-purple-500 mb-8 text-center card">Dein Profil</h1>
+    <div class="card p-8 rounded-lg shadow-lg max-w-md w-full relative z-20">
+      <!-- Fehleranzeige -->
+      <div id="error-message" class="text-red-500 text-center mb-2 hidden"></div>
+      <div id="success-message" class="text-green-500 text-center mb-2 hidden"></div>
 
-      <section id="datenschutz">
-        <h2 class="text-2xl font-bold text-purple-500 mb-4 mt-8">Datenschutz</h2>
-        <p class="text-gray-400 mb-4">
-          Der Schutz Ihrer persönlichen Daten ist uns ein besonderes Anliegen. Wir verarbeiten Ihre Daten daher ausschließlich auf Grundlage der gesetzlichen Bestimmungen (DSGVO, TMG). In diesen Datenschutzinformationen informieren wir Sie über die wichtigsten Aspekte der Datenverarbeitung im Rahmen unserer Website.
-        </p>
-        <p class="text-gray-400 mb-4">
-          <strong>Erhebung und Speicherung personenbezogener Daten:</strong><br>
-          Beim Besuch unserer Website erheben wir keine personenbezogenen Daten, es sei denn, Sie nutzen unser Anmelde- oder Registrierungsformular. In diesem Fall speichern wir die von Ihnen eingegebenen Daten (z. B. E-Mail, Benutzername) über unseren Dienstleister Supabase. Diese Daten werden verschlüsselt übertragen und nur für die Bereitstellung unserer Dienste verwendet.
-        </p>
-        <p class="text-gray-400 mb-4">
-          <strong>Cookies:</strong><br>
-          Unsere Website verwendet Cookies, um die Benutzerfreundlichkeit zu verbessern und bestimmte Funktionen bereitzustellen. Wir unterscheiden zwischen:
-          <ul class="list-disc pl-5">
-            <li><strong>Notwendige Cookies:</strong> Erforderlich für die grundlegende Funktionalität der Website (z. B. Anmeldung).</li>
-            <li><strong>Analytics-Cookies:</strong> Dienen der Analyse des Nutzerverhaltens, um unsere Website zu optimieren.</li>
-            <li><strong>Marketing-Cookies:</strong> Werden für personalisierte Werbung verwendet.</li>
-          </ul>
-          Sie können Ihre Cookie-Präferenzen beim ersten Besuch festlegen und jederzeit in den <a href="settings.html" class="text-purple-400 hover:text-pink-500">Einstellungen</a> anpassen oder Ihre Zustimmung widerrufen.
-        </p>
-        <p class="text-gray-400 mb-4">
-          <strong>Ihre Rechte:</strong><br>
-          Ihnen stehen grundsätzlich die Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit, Widerruf und Widerspruch zu. Wenn Sie glauben, dass die Verarbeitung Ihrer Daten gegen das Datenschutzrecht verstößt, können Sie sich bei einer Aufsichtsbehörde beschweren.
-        </p>
-        <p class="text-gray-400 mb-4">
-          <strong>Kontakt:</strong><br>
-          Bei Fragen zum Datenschutz wenden Sie sich bitte an: <a href="mailto:jayden_octra@yahoo.com" class="text-purple-400 hover:text-pink-500">datenschutz@octra.de</a>.
-        </p>
-      </section>
+      <!-- Profil-Infos -->
+      <div class="mb-6">
+        <h2 class="text-2xl font-bold text-purple-500 mb-4">Benutzerdaten</h2>
+        <p class="text-gray-400"><strong>Benutzername:</strong> <span id="profile-username">Laden...</span></p>
+        <p class="text-gray-400"><strong>E-Mail:</strong> <span id="profile-email">Laden...</span></p>
+      </div>
+
+      <!-- Profil bearbeiten -->
+      <form id="profile-form" class="space-y-4">
+        <div class="input-field card">
+          <label for="edit-username" class="block text-sm text-gray-400">Benutzername</label>
+          <input type="text" id="edit-username" class="input-field w-full bg-gray-800 border-purple-500 rounded-md p-2 text-white placeholder-gray-500" placeholder="Neuer Benutzername">
+        </div>
+        <button type="submit" class="neon-button w-full">Speichern</button>
+      </form>
     </div>
 
     <!-- Cookie-Consent-Modal -->

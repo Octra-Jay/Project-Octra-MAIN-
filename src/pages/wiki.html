@@ -6,7 +6,69 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title></title>
 </head>
+<!-- Header -->
+<header class="fixed top-0 w-full bg-gray-900 bg-opacity-90 z-50 p-4">
+  <div class="container mx-auto flex justify-between items-center px-2">
+    <img src="../../assets/logo/logo-anim.gif" alt="OCTRA Logo" class="h-10 logo-anim">
+    <nav class="hidden md:flex space-x-4 items-center">
+      <a href="index.html" class="text-white hover:text-purple-400 transition">Home</a>
+      <a href="projects.html" class="text-white hover:text-purple-400 transition">Projekte</a>
+      <a href="stats.html" class="text-white hover:text-purple-400 transition">Stats</a>
+      <a href="impressum.html" class="text-white hover:text-purple-400 transition">Impressum</a>
+      <a href="https://x.com" target="_blank"><img src="../../assets/icons/twitter.svg" alt="Twitter/X" class="h-6"></a>
+      <a href="https://linkedin.com" target="_blank"><img src="../../assets/icons/linkedin.svg" alt="LinkedIn" class="h-6"></a>
+      <a href="https://discord.com" target="_blank"><img src="../../assets/icons/discord.svg" alt="Discord" class="h-6"></a>
+      <a href="https://github.com" target="_blank"><img src="../../assets/icons/github.svg" alt="GitHub" class="h-6"></a>
+      <div class="relative">
+        <button id="profile-icon" class="text-white hover:text-purple-400">
+          <img src="../../assets/icons/profile.svg" alt="Profile" class="h-6">
+        </button>
+        <div id="profile-popup" class="hidden absolute right-0 mt-2 w-48 bg-gray-800 rounded-lg shadow-lg z-50 profile-popup">
+          <a href="profile.html" class="block px-4 py-2 text-white hover:bg-gray-700 hover:text-purple-400">Profile</a>
+          <a href="settings.html" class="block px-4 py-2 text-white hover:bg-gray-700 hover:text-purple-400">Settings</a>
+          <button id="logout-button" class="block w-full text-left px-4 py-2 text-white hover:bg-gray-700 hover:text-purple-400">Logout</button>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
 
+<!-- Mobile-Navbar -->
+<nav class="fixed bottom-0 w-full bg-gray-900 bg-opacity-90 p-4 flex justify-around md:hidden z-50">
+  <a href="index.html" class="text-white"><img src="../../assets/icons/home.svg" alt="Home" class="h-6"></a>
+  <a href="projects.html" class="text-white"><img src="../../assets/icons/projects.svg" alt="Projekte" class="h-6"></a>
+  <a href="stats.html" class="text-white"><img src="../../assets/icons/stats.svg" alt="Stats" class="h-6"></a>
+  <a href="impressum.html" class="text-white"><img src="../../assets/icons/info.svg" alt="Impressum" class="h-6"></a>
+  <a href="https://x.com" target="_blank"><img src="../../assets/icons/twitter.svg" alt="Twitter/X" class="h-6"></a>
+  <button id="profile-icon-mobile" class="text-white"><img src="../../assets/icons/profile.svg" alt="Profile" class="h-6"></button>
+</nav>
+
+<!-- Footer -->
+<footer class="bg-black p-4">
+  <div class="container mx-auto px-2 grid grid-cols-1 md:grid-cols-3 gap-6 text-gray-400">
+    <div>
+      <h3 class="text-purple-500 font-bold mb-2">Socials</h3>
+      <a href="#" class="block"><img src="../../assets/icons/discord.svg" alt="Discord" class="h-5 inline mr-2">Discord</a>
+      <a href="#" class="block"><img src="../../assets/icons/github.svg" alt="GitHub" class="h-5 inline mr-2">GitHub</a>
+    </div>
+    <div>
+      <h3 class="text-purple-500 font-bold mb-2">Navigation</h3>
+      <a href="index.html" class="block">Home</a>
+      <a href="projects.html" class="block">Projekte</a>
+      <a href="stats.html" class="block">Stats</a>
+      <a href="impressum.html" class="block">Impressum</a>
+    </div>
+    <div>
+      <h3 class="text-purple-500 font-bold mb-2">Rechtliches</h3>
+      <a href="impressum.html" class="block">Impressum</a>
+      <a href="impressum.html#datenschutz" class="block">Datenschutz</a>
+    </div>
+  </div>
+  <div class="border-t border-purple-500 mt-4 pt-2 text-center">
+    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="neon-button">Nach oben</button>
+    <p class="mt-2 text-gray-400">© 2025 OCTRA. Alle Rechte vorbehalten.</p>
+  </div>
+</footer>
 <body>
   
 </body>
