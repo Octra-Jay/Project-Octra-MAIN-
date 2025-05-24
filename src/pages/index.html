@@ -11,34 +11,35 @@
   <!-- Header -->
   <header class="fixed top-0 w-full bg-[#0e0e0e]/90 backdrop-blur-md z-10 py-4">
     <div class="container mx-auto flex justify-between items-center px-4">
-      <img src="../assets/logo/logo.png" alt="OCTRA Logo" class="h-10 logo">
+      <img src="../../assets/logo/logo-anim.gif" alt="OCTRA Logo" class="h-10 logo-anim">
       <nav class="hidden md:flex space-x-4">
-        <a href="projects.html" class="text-white hover:text-[#00c6ff]">Projekte</a>
-        <a href="stats.html" class="text-white hover:text-[#00c6ff]">Stats</a>
-        <a href="wiki.html" class="text-white hover:text-[#00c6ff]">Wiki</a>
+        <a href="index.html" class="text-white hover:text-[#00c6ff] transition-colors duration-300">Home</a>
+        <a href="projects.html" class="text-white hover:text-[#00c6ff] transition-colors duration-300">Projekte</a>
+        <a href="stats.html" class="text-white hover:text-[#00c6ff] transition-colors duration-300">Stats</a>
+        <a href="#"><img src="../../assets/icons/discord.svg" alt="Discord" class="h-6 ml-4"></a>
+        <a href="#"><img src="../../assets/icons/github.svg" alt="GitHub" class="h-6"></a>
       </nav>
-      <button class="md:hidden hamburger">☰</button>
     </div>
   </header>
 
   <!-- Landing-Bereich -->
-  <main class="min-h-screen flex flex-col justify-center items-center bg-[#0e0e0e] pt-20 pb-16 px-4">
-    <img src="../assets/logo/logo-anim.gif" alt="Animated Logo" class="h-32 mb-6 logo-anim">
-    <h1 class="text-5xl font-bold text-[#a259ff] mb-4">OCTRA</h1>
-    <p class="text-base text-white/90 mb-6 text-center">Das ultimative All-in-One-System für Discord, Guilded & Web</p>
-    <a href="#more" class="neon-button">Mehr erfahren</a>
-    <a href="#invite" class="neon-button mt-4">Bot einladen</a>
+  <main class="min-h-screen flex flex-col justify-center items-center bg-[#0e0e0e] pt-20 pb-20 px-4">
+    <img src="../../assets/logo/logo-anim.gif" alt="Animated Logo" class="h-32 mb-6 logo-anim card">
+    <h1 class="text-5xl font-bold text-[#a259ff] mb-4 card">OCTRA</h1>
+    <p class="text-base text-white/90 mb-6 text-center card">Das ultimative All-in-One-System für Discord, Guilded & Web</p>
+    <a href="#more" class="neon-button card">Mehr erfahren</a>
+    <a href="#invite" class="neon-button mt-4 card">Bot einladen</a>
   </main>
 
-  <!-- Mobile-Menü -->
-  <nav id="mobile-menu" class="hidden fixed bottom-0 w-full bg-[#1a1a1a] p-4 flex justify-around md:hidden">
-    <a href="index.html"><img src="../assets/icons/home.svg" alt="Home" class="h-6"></a>
-    <a href="projects.html"><img src="../assets/icons/projects.svg" alt="Projekte" class="h-6"></a>
-    <a href="wiki.html"><img src="../assets/icons/wiki.svg" alt="Wiki" class="h-6"></a>
+  <!-- Mobile-Navbar -->
+  <nav class="fixed bottom-0 w-full bg-[#1a1a1a]/90 backdrop-blur-md p-4 flex justify-around md:hidden z-20">
+    <a href="index.html" class="text-white"><img src="../../assets/icons/home.svg" alt="Home" class="h-6"></a>
+    <a href="projects.html" class="text-white"><img src="../../assets/icons/projects.svg" alt="Projekte" class="h-6"></a>
+    <a href="stats.html" class="text-white"><img src="../../assets/icons/stats.svg" alt="Stats" class="h-6"></a>
   </nav>
 
   <!-- Cookie-Banner -->
-  <div id="cookie-banner" class="hidden fixed bottom-0 w-full bg-[#1a1a1a]/90 text-white p-4 text-center">
+  <div id="cookie-banner" class="hidden fixed bottom-12 w-full bg-[#1a1a1a]/90 text-white p-4 text-center">
     Diese Website verwendet Cookies. <button class="neon-button ml-4" onclick="acceptCookies()">Akzeptieren</button>
   </div>
 

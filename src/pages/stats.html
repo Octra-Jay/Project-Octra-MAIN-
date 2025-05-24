@@ -11,42 +11,88 @@
   <!-- Header -->
   <header class="fixed top-0 w-full bg-[#0e0e0e]/90 backdrop-blur-md z-10 py-4">
     <div class="container mx-auto flex justify-between items-center px-4">
-      <img src="../assets/logo/logo.png" alt="OCTRA Logo" class="h-10 logo">
+      <img src="../assets/logo/logo-anim.gif" alt="OCTRA Logo" class="h-10 logo-anim">
       <nav class="hidden md:flex space-x-4">
-        <a href="index.html" class="text-white hover:text-[#00c6ff]">Home</a>
-        <a href="projects.html" class="text-white hover:text-[#00c6ff]">Projekte</a>
-        <a href="stats.html" class="text-white hover:text-[#00c6ff]">Stats</a>
+        <a href="index.html" class="text-white hover:text-[#00c6ff] transition-colors duration-300">Home</a>
+        <a href="projects.html" class="text-white hover:text-[#00c6ff] transition-colors duration-300">Projekte</a>
+        <a href="stats.html" class="text-white hover:text-[#00c6ff] transition-colors duration-300">Stats</a>
+        <a href="#"><img src="../assets/icons/discord.svg" alt="Discord" class="h-6 ml-4"></a>
+        <a href="#"><img src="../assets/icons/github.svg" alt="GitHub" class="h-6"></a>
       </nav>
-      <button class="md:hidden hamburger">☰</button>
     </div>
   </header>
 
   <!-- Stats-Bereich -->
-  <main class="container mx-auto pt-20 pb-16 px-4">
-    <h1 class="text-4xl font-bold text-[#a259ff] mb-8 text-center">Live-Statistiken</h1>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="bg-[#1a1a1a] p-6 rounded-xl shadow-lg text-center">
+  <main class="container mx-auto pt-20 pb-20 px-4">
+    <h1 class="text-4xl font-bold text-[#a259ff] mb-8 text-center card">Live-Statistiken</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-[#1a1a1a] p-6 rounded-xl shadow-lg text-center card">
+        <h2 class="text-2xl font-bold text-[#a259ff] mb-2">Benutzer Online</h2>
+        <p id="users-online" class="text-3xl counter">0</p>
+      </div>
+      <div class="bg-[#1a1a1a] p-6 rounded-xl shadow-lg text-center card">
+        <h2 class="text-2xl font-bold text-[#a259ff] mb-2">Admins Online</h2>
+        <p id="admins-online" class="text-3xl counter">0</p>
+      </div>
+      <div class="bg-[#1a1a1a] p-6 rounded-xl shadow-lg text-center card">
         <h2 class="text-2xl font-bold text-[#a259ff] mb-2">Server</h2>
-        <p id="server-count" class="text-3xl">Loading...</p>
+        <p id="server-count" class="text-3xl counter">0</p>
       </div>
-      <div class="bg-[#1a1a1a] p-6 rounded-xl shadow-lg text-center">
-        <h2 class="text-2xl font-bold text-[#a259ff] mb-2">Nutzer</h2>
-        <p id="user-count" class="text-3xl">Loading...</p>
+      <div class="bg-[#1a1a1a] p-6 rounded-xl shadow-lg text-center card">
+        <h2 class="text-2xl font-bold text-[#a259ff] mb-2">Codezeilen</h2>
+        <p id="code-lines" class="text-3xl counter">0</p>
       </div>
-      <div class="bg-[#1a1a1a] p-6 rounded-xl shadow-lg text-center">
-        <h2 class="text-2xl font-bold text-[#a259ff] mb-2">Aufrufe</h2>
-        <p id="view-count" class="text-3xl">Loading...</p>
+      <div class="bg-[#1a1a1a] p-6 rounded-xl shadow-lg text-center card">
+        <h2 class="text-2xl font-bold text-[#a259ff] mb-2">Entwicklungszeit</h2>
+        <p id="dev-time" class="text-3xl">0 Stunden</p>
       </div>
+      <div class="bg-[#1a1a1a] p-6 rounded-xl shadow-lg text-center card">
+        <h2 class="text-2xl font-bold text-[#a259ff] mb-2">Letzte Veröffentlichung</h2>
+        <p id="latest-release" class="text-3xl">v1.0.0 (23.05.2025)</p>
+      </div>
+    </div>
+    <!-- Platzhalter für Diagramm -->
+    <div class="mt-12">
+      <h2 class="text-2xl font-bold text-[#a259ff] mb-4 text-center">Statistik-Diagramm</h2>
+      <div id="stats-chart" class="bg-[#1a1a1a] p-6 rounded-xl text-center">Diagramm wird geladen...</div>
     </div>
   </main>
 
+  <!-- Mobile-Navbar -->
+  <nav class="fixed bottom-0 w-full bg-[#1a1a1a]/90 backdrop-blur-md p-4 flex justify-around md:hidden z-20">
+    <a href="index.html" class="text-white"><img src="../assets/icons/home.svg" alt="Home" class="h-6"></a>
+    <a href="projects.html" class="text-white"><img src="../assets/icons/projects.svg" alt="Projekte" class="h-6"></a>
+    <a href="stats.html" class="text-white"><img src="../assets/icons/stats.svg" alt="Stats" class="h-6"></a>
+  </nav>
+
   <!-- Footer -->
   <footer class="bg-[#0e0e0e] py-6">
-    <div class="container mx-auto text-center text-white/70">
-      <p>&copy; 2025 OCTRA. Alle Rechte vorbehalten.</p>
+    <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6 text-white/70">
+      <div>
+        <h3 class="text-[#a259ff] font-bold mb-2">Socials</h3>
+        <a href="#" class="block"><img src="../assets/icons/discord.svg" alt="Discord" class="h-6 inline mr-2">Discord</a>
+        <a href="#" class="block"><img src="../assets/icons/github.svg" alt="GitHub" class="h-6 inline mr-2">GitHub</a>
+      </div>
+      <div>
+        <h3 class="text-[#a259ff] font-bold mb-2">Navigation</h3>
+        <a href="index.html" class="block">Home</a>
+        <a href="projects.html" class="block">Projekte</a>
+        <a href="stats.html" class="block">Stats</a>
+      </div>
+      <div>
+        <h3 class="text-[#a259ff] font-bold mb-2">Rechtliches</h3>
+        <a href="impressum.html" class="block">Impressum</a>
+        <a href="impressum.html#datenschutz" class="block">Datenschutz</a>
+      </div>
+    </div>
+    <div class="border-t border-[#a259ff] mt-6 pt-4 text-center">
+      <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="neon-button">Nach oben</button>
+      <p class="mt-4 text-white/70">© 2025 OCTRA. Alle Rechte vorbehalten.</p>
     </div>
   </footer>
 
-  <script src="../js/nav.js"></script>
+  <script src="../js/cookie.js"></script>
+  <script src="../js/animations.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> in stats.html
 </body>
 </html>

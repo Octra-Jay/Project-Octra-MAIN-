@@ -1,14 +1,16 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
-</head>
-
-<body>
-  
-</body>
-
-</html>
+// Keine Logik nötig, da Hamburger-Menü entfernt
+// Optional: Aktive Seite hervorheben
+<nav class="fixed bottom-0 w-full bg-[#1a1a1a]/90 backdrop-blur-md p-4 flex justify-around md:hidden z-20">
+  <a href="index.html" class="text-white"><img src="../../assets/icons/home.svg" alt="Home" class="h-6"></a>
+  <a href="projects.html" class="text-white"><img src="../../assets/icons/projects.svg" alt="Projekte" class="h-6"></a>
+  <a href="stats.html" class="text-white"><img src="../../assets/icons/stats.svg" alt="Stats" class="h-6"></a>
+document.addEventListener('DOMContentLoaded', () => {
+  const currentPath = window.location.pathname.split('/').pop();
+  const navLinks = document.querySelectorAll('nav a');
+  navLinks.forEach(link => {
+    if (link.getAttribute('href') === currentPath) {
+      link.classList.add('text-[#a259ff]');
+     </nav>
+    }
+  });
+});

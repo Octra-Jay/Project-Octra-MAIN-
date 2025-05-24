@@ -9,3 +9,41 @@ document.addEventListener('DOMContentLoaded', () => {
     main.style.transform = 'translateY(0)';
   }, 100);
 });
+document.addEventListener('DOMContentLoaded', () => {
+  // Seitenübergang
+  document.body.style.opacity = '0';
+  setTimeout(() => {
+    document.body.style.opacity = '1';
+  }, 100);
+
+  // Scroll-Animation für Karten und Felder
+  const cards = document.querySelectorAll('.card');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  cards.forEach(card => observer.observe(card));
+});
+document.addEventListener('DOMContentLoaded', () => {
+  // Seitenübergang
+  document.body.style.opacity = '0';
+  setTimeout(() => {
+    document.body.style.opacity = '1';
+  }, 100);
+
+  // Scroll-Animation für Karten und Felder
+  const cards = document.querySelectorAll('.card');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  cards.forEach(card => observer.observe(card));
+});

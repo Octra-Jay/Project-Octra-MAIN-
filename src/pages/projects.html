@@ -11,31 +11,32 @@
   <!-- Header -->
   <header class="fixed top-0 w-full bg-[#0e0e0e]/90 backdrop-blur-md z-10 py-4">
     <div class="container mx-auto flex justify-between items-center px-4">
-      <img src="../assets/logo/logo.png" alt="OCTRA Logo" class="h-10 logo">
+      <img src="../../assets/logo/logo-anim.gif" alt="OCTRA Logo" class="h-10 logo-anim">
       <nav class="hidden md:flex space-x-4">
-        <a href="index.html" class="text-white hover:text-[#00c6ff]">Home</a>
-        <a href="projects.html" class="text-white hover:text-[#00c6ff]">Projekte</a>
-        <a href="stats.html" class="text-white hover:text-[#00c6ff]">Stats</a>
+        <a href="index.html" class="text-white hover:text-[#00c6ff] transition-colors duration-300">Home</a>
+        <a href="projects.html" class="text-white hover:text-[#00c6ff] transition-colors duration-300">Projekte</a>
+        <a href="stats.html" class="text-white hover:text-[#00c6ff] transition-colors duration-300">Stats</a>
+        <a href="#"><img src="../../assets/icons/discord.svg" alt="Discord" class="h-6 ml-4"></a>
+        <a href="#"><img src="../../assets/icons/github.svg" alt="GitHub" class="h-6"></a>
       </nav>
-      <button class="md:hidden hamburger">☰</button>
     </div>
   </header>
 
   <!-- Projekte-Bereich -->
-  <main class="container mx-auto pt-20 pb-16 px-4">
-    <h1 class="text-4xl font-bold text-[#a259ff] mb-8 text-center">Unsere Projekte</h1>
+  <main class="container mx-auto pt-20 pb-20 px-4">
+    <h1 class="text-4xl font-bold text-[#a259ff] mb-8 text-center card">Unsere Projekte</h1>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="bg-[#1a1a1a] p-6 rounded-xl shadow-lg hover:shadow-[#00c6ff] transition-all duration-300">
+      <div class="bg-[#1a1a1a] p-6 rounded-xl shadow-lg card">
         <h2 class="text-2xl font-bold text-[#a259ff] mb-2">Discord-Bot</h2>
         <p class="text-white/90">Ein multifunktionaler Bot für Discord-Server.</p>
         <a href="#" class="neon-button mt-4 inline-block">Mehr erfahren</a>
       </div>
-      <div class="bg-[#1a1a1a] p-6 rounded-xl shadow-lg hover:shadow-[#00c6ff] transition-all duration-300">
+      <div class="bg-[#1a1a1a] p-6 rounded-xl shadow-lg card">
         <h2 class="text-2xl font-bold text-[#a259ff] mb-2">Guilded-Bot</h2>
         <p class="text-white/90">Ein Bot für Guilded mit ähnlichen Funktionen.</p>
         <a href="#" class="neon-button mt-4 inline-block">Mehr erfahren</a>
       </div>
-      <div class="bg-[#1a1a1a] p-6 rounded-xl shadow-lg hover:shadow-[#00c6ff] transition-all duration-300">
+      <div class="bg-[#1a1a1a] p-6 rounded-xl shadow-lg card">
         <h2 class="text-2xl font-bold text-[#a259ff] mb-2">Webplattform</h2>
         <p class="text-white/90">Die zentrale Verwaltungsplattform.</p>
         <a href="#" class="neon-button mt-4 inline-block">Mehr erfahren</a>
@@ -43,13 +44,14 @@
     </div>
   </main>
 
-  <!-- Footer -->
-  <footer class="bg-[#0e0e0e] py-6">
-    <div class="container mx-auto text-center text-white/70">
-      <p>&copy; 2025 OCTRA. Alle Rechte vorbehalten.</p>
-    </div>
-  </footer>
+  <!-- Mobile-Navbar -->
+  <nav class="fixed bottom-0 w-full bg-[#1a1a1a]/90 backdrop-blur-md p-4 flex justify-around md:hidden z-20">
+    <a href="index.html" class="text-white"><img src="../../assets/icons/home.svg" alt="Home" class="h-6"></a>
+    <a href="projects.html" class="text-white"><img src="../../assets/icons/projects.svg" alt="Projekte" class="h-6"></a>
+    <a href="stats.html" class="text-white"><img src="../../assets/icons/stats.svg" alt="Stats" class="h-6"></a>
+  </nav>
 
+  <script src="../js/animations.js"></script>
   <script src="../js/nav.js"></script>
 </body>
 </html>
