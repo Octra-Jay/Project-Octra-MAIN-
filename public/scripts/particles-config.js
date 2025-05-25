@@ -5,9 +5,9 @@ if (typeof particlesJS !== 'undefined') {
       number: { value: 150, density: { enable: true, value_area: 800 } },
       color: { value: ['#9333ea', '#ec4899'] },
       shape: { type: 'circle' },
-      opacity: { value: 0.5, random: true, anim: { enable: true, speed: 1, opacity_min: 0.1, sync: false } },
+      opacity: { value: 0.6, random: true, anim: { enable: true, speed: 1, opacity_min: 0.1, sync: false } },
       size: { value: 5, random: true },
-      line_linked: { enable: true, distance: 120, color: '#9333ea', opacity: 0.4, width: 1 },
+      line_linked: { enable: true, distance: 120, color: '#9333ea', opacity: 0.3, width: 1 },
       move: { enable: true, speed: 1, direction: 'none', random: true, straight: false, out_mode: 'out' }
     },
     interactivity: {
@@ -18,5 +18,5 @@ if (typeof particlesJS !== 'undefined') {
   });
   console.log('Particles initialized');
 } else {
-  console.error('particles.js nicht geladen. Stelle sicher, dass particles.min.js eingebunden ist.');
+  console.error('particles.js nicht geladen. Bitte /scripts/particles.js überprüfen.');
 }

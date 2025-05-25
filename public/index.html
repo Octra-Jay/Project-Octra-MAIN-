@@ -1,4 +1,3 @@
-<!-- public/index.html -->
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -9,8 +8,56 @@
   <link rel="stylesheet" href="/styles/custom.css">
 </head>
 <body class="bg-black text-white font-poppins">
-  <div class="min-h-screen flex items-center justify-center">
-    <h1 class="text-4xl neon-text">Willkommen bei OCTRA</h1>
-  </div>
+  <!-- Partikel-Hintergrund -->
+  <div id="particles-js" class="fixed inset-0 z-0"></div>
+
+  <!-- Hero-Text -->
+  <section class="min-h-screen flex items-center justify-center relative z-10 pt-8 px-4 px-4 animate-hero-load">
+    <div class="container mx-auto text-center bg-gray-900 bg-opacity-20 backdrop-blur-md rounded-lg p-8 p-4">
+      <h1 class="text-5xl md:text-7xl font-bold text-white neon-text animate-pulse-glow">Willkommen bei OCTRA</h1>
+      <p class="text-xl md:text-2xl text-gray-300 mt-4 max-w-3xl mx-auto animate-fade-in">
+        Deine Reise in die Welt der Daten beginnt hier.
+      </p>
+    </div>
+  </section>
+
+  <!-- Mobile-Navbar -->
+  <nav class="navbar fixed bottom-0 w-full bg-gray-900 bg-opacity-20 backdrop-blur-md p-4 flex justify-around md:hidden z-50">
+    <a href="/index.html" class="text-white hover:scale-110 transition-transform duration-200 active"><img src="/assets/icons/home.svg" alt="Home" class="h-6"></a>
+    <a href="/projects.html" class="text-white hover:scale-110 transition-transform duration-200><img src="/assets/icons/projects.svg" alt="Projekte" class="h-6"></a>
+    <a href="/stats.html" class="text-white hover:scale-110 transition-transform duration-200">
+<img src="/assets/icons/stats.svg" alt="Stats" class="h-6"></a>
+    <a href="/impressum.html" class="text-white hover:scale-110 transition-transform duration-200">
+<img src="/assets/icons/info.svg" alt="Impressum" class="h-6"></a>
+    <a href="https://x.com" target="_blank" class="text-white hover:scale-110 transition-transform duration-200">
+<img src="/assets/icons/twitter.svg" alt="Twitter/X" class="h-6"></a>
+  </nav>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 bg-opacity-20 backdrop-blur-md p-4 relative z-10 text-center text-gray-400">
+    <p>&copy; 2025 OCTRA. Alle Rechte vorbehalten.</p>
+  </footer>
+
+  <!-- Skripte -->
+  <script defer src="/scripts/particles.js"></script>
+  <script defer src="/scripts/particles-config.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+      document.querySelectorAll('nav a').forEach(link => {
+        const href = link.getAttribute('href').replace(/^\//, '');
+        if (href === currentPath) {
+          link.classList.add('active');
+        }
+      });
+
+      // Debugging
+      console.log('custom.css loaded:', !!document.querySelector('link[href="/styles/custom.css"]'));
+      console.log('particles.js loaded:', !!document.querySelector('script[src="/scripts/particles.js"]'));
+      console.log('particles-config.js loaded:', !!document.querySelector('script[src="/scripts/particles-config.js"]'));
+      console.log('Icons loaded:', document.querySelectorAll('nav img').length);
+      console.log('Particles div:', !!document.getElementById('particles-js'));
+    });
+  </script>
 </body>
 </html>

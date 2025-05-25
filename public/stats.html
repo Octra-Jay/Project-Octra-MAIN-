@@ -74,12 +74,12 @@
   </nav>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 bg-opacity-20 backdrop-blur-md p-4 relative z-10 text-center text-gray-400">
-    <p>© 2025 OCTRA. Alle Rechte vorbehalten.</p>
+  <footer class="bg-gray-900 bg-opacity-20 backdrop-blur-md p-3 relative z-10 text-center text-gray-400">
+    <p>&copy; 2025 OCTRA. Alle Rechte vorbehalten.</p>
   </footer>
 
   <!-- Skripte -->
-  <script defer src="/scripts/particles.min.js"></script>
+  <script defer src="/scripts/particles.js"></script>
   <script defer src="/scripts/particles-config.js"></script>
   <script>
     function toggleAccordion(id) {
@@ -88,14 +88,14 @@
       const isHidden = content.classList.contains('max-h-0');
       content.classList.toggle('max-h-0', !isHidden);
       content.classList.toggle('opacity-0', !isHidden);
-      content.classList.toggle('max-h-[500px]', isHidden);
+      content.classList.toggle('max-h-[500px');
+], isHidden);
       icon.classList.toggle('rotate-180', isHidden);
     }
 
     document.addEventListener('DOMContentLoaded', () => {
       const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-      const navLinks = document.querySelectorAll('nav a');
-      navLinks.forEach(link => {
+      document.querySelectorAll('nav a').forEach(link => {
         const href = link.getAttribute('href').replace(/^\//, '');
         if (href === currentPath) {
           link.classList.add('active');
@@ -104,10 +104,10 @@
 
       // Debugging
       console.log('custom.css loaded:', !!document.querySelector('link[href="/styles/custom.css"]'));
-      console.log('particles.min.js loaded:', !!document.querySelector('script[src="/scripts/particles.min.js"]'));
+      console.log('particles.js loaded:', !!document.querySelector('script[src="/scripts/particles.js"]'));
       console.log('particles-config.js loaded:', !!document.querySelector('script[src="/scripts/particles-config.js"]'));
       console.log('Icons loaded:', document.querySelectorAll('nav img').length);
-      console.log('Particles div:', !!document.getElementById('particles-js'));
+      console.log('Particles div:', !!document.getElement.getElementById('particles-js'));
     });
   </script>
 </body>
