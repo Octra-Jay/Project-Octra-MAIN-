@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OCTRA - Projekte</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/styles/custom.css">
+  <link rel="stylesheet" href="./styles/custom.css">
 </head>
 <body class="bg-black text-white font-poppins">
   <!-- Partikel-Hintergrund -->
@@ -23,11 +23,11 @@
 
   <!-- Mobile-Navbar -->
   <nav class="fixed bottom-0 w-full bg-gray-900 bg-opacity-20 backdrop-blur-md p-4 flex justify-around md:hidden z-50">
-    <a href="/index.html" class="text-white hover:scale-110 transition-transform duration-200"><img src="/assets/icons/home.svg" alt="Home" class="h-6"></a>
-    <a href="/projects.html" class="text-white hover:scale-110 transition-transform duration-200 active"><img src="/assets/icons/projects.svg" alt="Projekte" class="h-6"></a>
-    <a href="/stats.html" class="text-white hover:scale-110 transition-transform duration-200"><img src="/assets/icons/stats.svg" alt="Stats" class="h-6"></a>
-    <a href="/impressum.html" class="text-white hover:scale-110 transition-transform duration-200"><img src="/assets/icons/info.svg" alt="Impressum" class="h-6"></a>
-    <a href="https://x.com" target="_blank" class="text-white hover:scale-110 transition-transform duration-200"><img src="/assets/icons/twitter.svg" alt="Twitter/X" class="h-6"></a>
+    <a href="./index.html" class="text-white hover:scale-110 transition-transform duration-200"><img src="./assets/icons/home.svg" alt="Home" class="h-6"></a>
+    <a href="./projects.html" class="text-white hover:scale-110 transition-transform duration-200 active"><img src="./assets/icons/projects.svg" alt="Projekte" class="h-6"></a>
+    <a href="./stats.html" class="text-white hover:scale-110 transition-transform duration-200"><img src="./assets/icons/stats.svg" alt="Stats" class="h-6"></a>
+    <a href="./impressum.html" class="text-white hover:scale-110 transition-transform duration-200"><img src="./assets/icons/info.svg" alt="Impressum" class="h-6"></a>
+    <a href="https://x.com" target="_blank" class="text-white hover:scale-110 transition-transform duration-200"><img src="./assets/icons/twitter.svg" alt="Twitter/X" class="h-6"></a>
   </nav>
 
   <!-- Footer -->
@@ -36,8 +36,8 @@
   </footer>
 
   <!-- Skripte -->
-  <script defer src="/scripts/particles.js"></script>
-  <script defer src="/scripts/particles-config.js"></script>
+  <script defer src="./scripts/particles.js"></script>
+  <script defer src="./scripts/particles-config.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const currentPath = window.location.pathname.split('/').pop() || 'index.html';
@@ -49,9 +49,9 @@
       });
 
       // Debugging
-      console.log('custom.css loaded:', !!document.querySelector('link[href="/styles/custom.css"]'));
-      console.log('particles.js loaded:', !!document.querySelector('script[src="/scripts/particles.js"]'));
-      console.log('particles-config.js loaded:', !!document.querySelector('script[src="/scripts/particles-config.js"]'));
+      console.log('custom.css loaded:', !!document.querySelector('link[href="./styles/custom.css"]'));
+      console.log('particles.js loaded:', !!document.querySelector('script[src="./scripts/particles.js"]'));
+      console.log('particles-config.js loaded:', !!document.querySelector('script[src="./scripts/particles-config.js"]'));
       console.log('Icons loaded:', document.querySelectorAll('nav img').length);
       console.log('Particles div:', !!document.getElementById('particles-js'));
     });

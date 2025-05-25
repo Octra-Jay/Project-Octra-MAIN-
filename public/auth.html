@@ -1,200 +1,264 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OCTRA - Anmeldung</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="../css/custom.css">
-  <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCTRA - Anmeldung</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/custom.css">
 </head>
 <body class="bg-black text-white font-poppins">
-  <!-- Header -->
-  <header class="fixed top-0 w-full bg-gray-900 bg-opacity-90 z-50 p-4">
-    <div class="container mx-auto flex justify-between items-center px-2">
-      <img src="../../assets/logo/logo-anim.gif" alt="OCTRA Logo" class="h-10 logo-anim">
-      <nav class="hidden md:flex space-x-4 items-center">
-        <a href="index.html" class="text-white hover:text-purple-400 transition">Home</a>
-        <a href="projects.html" class="text-white hover:text-purple-400 transition">Projekte</a>
-        <a href="stats.html" class="text-white hover:text-purple-400 transition">Stats</a>
-        <a href="impressum.html" class="text-white hover:text-purple-400 transition">Impressum</a>
-        <a href="https://x.com" target="_blank"><img src="../../assets/icons/twitter.svg" alt="Twitter/X" class="h-6"></a>
-        <a href="https://linkedin.com" target="_blank"><img src="../../assets/icons/linkedin.svg" alt="LinkedIn" class="h-6"></a>
-        <a href="https://discord.com" target="_blank"><img src="../../assets/icons/discord.svg" alt="Discord" class="h-6"></a>
-        <a href="https://github.com" target="_blank"><img src="../../assets/icons/github.svg" alt="GitHub" class="h-6"></a>
-        <div class="relative">
-          <button id="profile-icon" class="text-white hover:text-purple-400">
-            <img src="../../assets/icons/profile.svg" alt="Profile" class="h-6">
-          </button>
-          <div id="profile-popup" class="hidden absolute right-0 mt-2 w-48 bg-gray-800 rounded-lg shadow-lg z-50 profile-popup">
-            <a href="profile.html" class="block px-4 py-2 text-white hover:bg-gray-700 hover:text-purple-400">Profile</a>
-            <a href="settings.html" class="block px-4 py-2 text-white hover:bg-gray-700 hover:text-purple-400">Settings</a>
-            <button id="logout-button" class="block w-full text-left px-4 py-2 text-white hover:bg-gray-700 hover:text-purple-400">Logout</button>
-          </div>
-        </div>
-      </nav>
-    </div>
-  </header>
+    <!-- Partikel-Hintergrund -->
+    <div id="particles-js" class="fixed inset-0 z-0"></div>
 
-  <!-- Auth-Bereich -->
-  <main class="min-h-screen flex flex-col justify-center items-center bg-black pt-20 pb-20 px-4">
-    <h1 class="text-4xl font-bold text-purple-500 mb-8 text-center card">Anmeldung</h1>
-    <div class="card p-8 rounded-lg shadow-lg max-w-md w-full relative z-20">
-      <!-- Tabs -->
-      <div class="flex justify-center mb-4 relative z-30">
-        <button id="login-tab" class="px-4 py-2 text-purple-500 border-b-2 border-purple-500 neon-tab">Login</button>
-        <button id="register-tab" class="px-4 py-2 text-white neon-tab">Registrierung</button>
-      </div>
-
-      <!-- Fehleranzeige -->
-      <div id="error-message" class="text-red-500 text-center mb-2 hidden"></div>
-
-      <!-- Login-Formular -->
-      <form id="login-form" class="space-y-4">
-        <div class="input-field card">
-          <label for="login-email" class="block text-sm text-gray-400">E-Mail</label>
-          <input type="email" id="login-email" class="input-field w-full bg-gray-800 border-purple-500 rounded-md p-2 text-white placeholder-gray-500" required placeholder="deine@email.com">
+    <!-- Header -->
+    <header class="fixed top-0 w-full bg-gray-900 bg-opacity-20 backdrop-blur-md z-50 p-4 animate-nav-load">
+        <div class="container mx-auto flex justify-between items-center px-2">
+            <img src="./assets/logo/logo-anim.gif" alt="OCTRA Logo" class="h-10 logo-anim">
+            <nav class="hidden md:flex space-x-4 items-center">
+                <a href="./index.html" class="nav-link neon-text group">
+                    <span class="relative transition-all duration-300 group-hover:text-pink-500">Home</span>
+                </a>
+                <a href="./projects.html" class="nav-link neon-text group">
+                    <span class="relative transition-all duration-300 group-hover:text-pink-500">Projekte</span>
+                </a>
+                <a href="./stats.html" class="nav-link neon-text group">
+                    <span class="relative transition-all duration-300 group-hover:text-pink-500">Stats</span>
+                </a>
+                <a href="./impressum.html" class="nav-link neon-text group">
+                    <span class="relative transition-all duration-300 group-hover:text-pink-500">Impressum</span>
+                </a>
+                <a href="https://x.com" target="_blank" class="nav-icon-container">
+                    <img src="./assets/icons/twitter.svg" alt="Twitter/X" class="h-6 neon-icon">
+                </a>
+                <a href="https://linkedin.com" target="_blank" class="nav-icon-container">
+                    <img src="./assets/icons/linkedin.svg" alt="LinkedIn" class="h-6 neon-icon">
+                </a>
+                <a href="https://discord.com" target="_blank" class="nav-icon-container">
+                    <img src="./assets/icons/discord.svg" alt="Discord" class="h-6 neon-icon">
+                </a>
+                <a href="https://github.com" target="_blank" class="nav-icon-container">
+                    <img src="./assets/icons/github.svg" alt="GitHub" class="h-6 neon-icon">
+                </a>
+                <div class="relative">
+                    <button id="profile-icon" class="nav-icon-container">
+                        <img src="./assets/icons/profile.svg" alt="Profile" class="h-6 neon-icon">
+                    </button>
+                    <div id="profile-popup" class="hidden absolute right-0 mt-2 w-48 bg-gray-900 bg-opacity-20 backdrop-blur-md rounded-lg shadow-lg z-50">
+                        <a href="./profile.html" class="block px-4 py-2 text-white neon-text hover:bg-purple-900 hover:bg-opacity-30">Profile</a>
+                        <a href="./settings.html" class="block px-4 py-2 text-white neon-text hover:bg-purple-900 hover:bg-opacity-30">Settings</a>
+                        <button id="logout-button" class="block w-full text-left px-4 py-2 text-white neon-text hover:bg-purple-900 hover:bg-opacity-30">Logout</button>
+                    </div>
+                </div>
+            </nav>
         </div>
-        <div class="input-field card relative">
-          <label for="login-password" class="block text-sm text-gray-400">Passwort</label>
-          <input type="password" id="login-password" class="input-field w-full bg-gray-800 border-purple-500 rounded-md p-2 text-white placeholder-gray-500 pr-10" required placeholder="••••••••">
-          <button type="button" id="login-password-toggle" class="absolute right-2 top-9 text-gray-400 hover:text-purple-400">
-            <img src="../../assets/icons/eye.svg" alt="Show Password" class="h-5">
-          </button>
-        </div>
-        <button type="submit" class="neon-button w-full">Einloggen</button>
-      </form>
+    </header>
 
-      <!-- Registrierungs-Formular -->
-      <form id="register-form" class="space-y-4 hidden">
-        <div class="input-field card">
-          <label for="register-username" class="block text-sm text-gray-400">Benutzername</label>
-          <input type="text" id="register-username" class="input-field w-full bg-gray-800 border-purple-500 rounded-md p-2 text-white placeholder-gray-500" required placeholder="DeinBenutzername">
-        </div>
-        <div class="input-field card">
-          <label for="register-email" class="block text-sm text-gray-400">E-Mail</label>
-          <input type="email" id="register-email" class="input-field w-full bg-gray-800 border-purple-500 rounded-md p-2 text-white placeholder-gray-500" required placeholder="deine@email.com">
-        </div>
-        <div class="input-field card relative">
-          <label for="register-password" class="block text-sm text-gray-400">Passwort</label>
-          <input type="password" id="register-password" class="input-field w-full bg-gray-800 border-purple-500 rounded-md p-2 text-white placeholder-gray-500 pr-10" required placeholder="••••••••">
-          <button type="button" id="register-password-toggle" class="absolute right-2 top-9 text-gray-400 hover:text-purple-400">
-            <img src="../../assets/icons/eye.svg" alt="Show Password" class="h-5">
-          </button>
-        </div>
-        <div class="input-field card relative">
-          <label for="register-password-confirm" class="block text-sm text-gray-400">Passwort bestätigen</label>
-          <input type="password" id="register-password-confirm" class="input-field w-full bg-gray-800 border-purple-500 rounded-md p-2 text-white placeholder-gray-500 pr-10" required placeholder="••••••••">
-          <button type="button" id="register-password-confirm-toggle" class="absolute right-2 top-9 text-gray-400 hover:text-purple-400">
-            <img src="../../assets/icons/eye.svg" alt="Show Password" class="h-5">
-          </button>
-        </div>
-        <button type="submit" class="neon-button w-full">Registrieren</button>
-      </form>
+    <!-- Auth-Bereich -->
+    <main class="min-h-screen flex flex-col justify-center items-center relative z-10 pt-20 pb-20 px-4 animate-hero-load">
+        <h1 class="text-4xl font-bold neon-text mb-8 text-center">Anmeldung</h1>
+        <div class="card bg-gray-900 bg-opacity-20 backdrop-blur-md p-8 rounded-lg shadow-lg max-w-md w-full">
+            <!-- Tabs -->
+            <div class="flex justify-center mb-6">
+                <button id="login-tab" class="px-6 py-2 neon-text tab active">Login</button>
+                <button id="register-tab" class="px-6 py-2 neon-text tab">Registrierung</button>
+            </div>
 
-      <!-- OAuth-Buttons -->
-      <div class="mt-4 text-center card">
-        <p class="text-gray-400 mb-2">Oder mit OAuth anmelden</p>
-        <div class="flex justify-center space-x-4">
-          <button id="discord-oauth" class="neon-button flex items-center">
-            <img src="../../assets/icons/discord.svg" alt="Discord" class="h-6 mr-2">Discord
-          </button>
-          <button id="github-oauth" class="neon-button flex items-center">
-            <img src="../../assets/icons/github.svg" alt="GitHub" class="h-6 mr-2">GitHub
-          </button>
+            <!-- Fehleranzeige -->
+            <div id="error-message" class="text-red-500 text-center mb-4 hidden"></div>
+
+            <!-- Login-Formular -->
+            <form id="login-form" class="space-y-4">
+                <div class="input-field">
+                    <label for="login-email" class="block text-sm text-gray-400">E-Mail</label>
+                    <input type="email" id="login-email" class="w-full bg-gray-800 border border-purple-500 rounded-md p-2 text-white placeholder-gray-500" required placeholder="deine@email.com">
+                </div>
+                <div class="input-field relative">
+                    <label for="login-password" class="block text-sm text-gray-400">Passwort</label>
+                    <input type="password" id="login-password" class="w-full bg-gray-800 border border-purple-500 rounded-md p-2 text-white placeholder-gray-500 pr-10" required placeholder="••••">
+                    <button type="button" id="login-password-toggle" class="absolute right-3 top-10 transform -translate-y-1/2">
+                        <img src="./assets/icons/eye.svg" alt="Show Password" class="h-5 neon-icon toggle-icon">
+                    </button>
+                </div>
+                <button type="submit" class="neon-button w-full py-2">Einloggen</button>
+            </form>
+
+            <!-- Registrierungs-Formular -->
+            <form id="register-form" class="space-y-4 hidden">
+                <div class="input-field">
+                    <label for="register-username" class="block text-sm text-gray-400">Benutzername</label>
+                    <input type="text" id="register-username" class="w-full bg-gray-800 border border-purple-500 rounded-md p-2 text-white placeholder-gray-500" required placeholder="DeinBenutzername">
+                </div>
+                <div class="input-field">
+                    <label for="register-email" class="block text-sm text-gray-400">E-Mail</label>
+                    <input type="email" id="register-email" class="w-full bg-gray-800 border border-purple-500 rounded-md p-2 text-white placeholder-gray-500" required placeholder="deine@email.com">
+                </div>
+                <div class="input-field relative">
+                    <label for="register-password" class="block text-sm text-gray-400">Passwort</label>
+                    <input type="password" id="register-password" class="w-full bg-gray-800 border border-purple-500 rounded-md p-2 text-white placeholder-gray-500 pr-10" required placeholder="••••">
+                    <button type="button" id="register-password-toggle" class="absolute right-3 top-10 transform -translate-y-1/2">
+                        <img src="./assets/icons/eye.svg" alt="Show Password" class="h-5 neon-icon toggle-icon">
+                    </button>
+                </div>
+                <div class="input-field relative">
+                    <label for="register-password-confirm" class="block text-sm text-gray-400">Passwort bestätigen</label>
+                    <input type="password" id="register-password-confirm" class="w-full bg-gray-800 border border-purple-500 rounded-md p-2 text-white placeholder-gray-500 pr-10" required placeholder="••••">
+                    <button type="button" id="register-password-confirm-toggle" class="absolute right-3 top-10 transform -translate-y-1/2">
+                        <img src="./assets/icons/eye.svg" alt="Show Password" class="h-5 neon-icon toggle-icon">
+                    </button>
+                </div>
+                <button type="submit" class="neon-button w-full py-2">Registrieren</button>
+            </form>
+
+            <!-- OAuth-Buttons -->
+            <div class="mt-6 text-center">
+                <p class="text-gray-400 mb-2">Oder mit OAuth anmelden</p>
+                <div class="flex justify-center space-x-4">
+                    <button id="discord-oauth" class="neon-button flex items-center py-2 px-4">
+                        <img src="./assets/icons/discord.svg" alt="Discord" class="h-6 mr-2 neon-icon">Discord
+                    </button>
+                    <button id="github-oauth" class="neon-button flex items-center py-2 px-4">
+                        <img src="./assets/icons/github.svg" alt="GitHub" class="h-6 mr-2 neon-icon">GitHub
+                    </button>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
 
-    <!-- Bestätigungs-Modal -->
-    <div id="confirmation-modal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden z-40 pointer-events-none">
-      <div class="card p-8 rounded-lg shadow-lg max-w-md w-full pointer-events-auto">
-        <h2 class="text-2xl font-bold text-purple-500 mb-2 text-center">E-Mail-Bestätigung</h2>
-        <p class="text-gray-400 mb-2 text-center">Bitte überprüfe deine E-Mail und gib den 6-stelligen Code ein.</p>
-        <form id="confirmation-form" class="space-y-4">
-          <div class="input-field card">
-            <label for="confirmation-code" class="block text-sm text-gray-400">Bestätigungscode</label>
-            <input type="text" id="confirmation-code" class="input-field w-full bg-gray-800 border-purple-500 rounded-md p-2 text-white placeholder-gray-500" required placeholder="123456" maxlength="6">
-          </div>
-          <button type="submit" class="neon-button w-full">Bestätigen</button>
-        </form>
-        <button id="change-email" class="mt-2 text-purple-400 hover:text-pink-500 w-full text-center">E-Mail-Adresse ändern</button>
-      </div>
-    </div>
-
-    <!-- Cookie-Consent-Modal -->
-    <div id="cookie-consent-modal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden z-50 pointer-events-none">
-      <div class="card p-8 rounded-lg shadow-lg max-w-md w-full pointer-events-auto">
-        <h2 class="text-2xl font-bold text-purple-500 mb-4 text-center">Datenschutz-Einstellungen</h2>
-        <p class="text-gray-400 mb-4 text-center">Wir verwenden Cookies, um unsere Website zu verbessern. Bitte wähle deine Präferenzen.</p>
-        <div id="cookie-buttons" class="space-y-4">
-          <button id="accept-all-cookies" class="neon-button w-full">Alle akzeptieren</button>
-          <button id="accept-necessary-cookies" class="neon-button w-full">Nur notwendige akzeptieren</button>
-          <button id="customize-cookies" class="neon-button w-full">Einstellungen anpassen</button>
+        <!-- Bestätigungs-Modal -->
+        <div id="confirmation-modal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden z-40 pointer-events-none">
+            <div class="card bg-gray-900 bg-opacity-20 backdrop-blur-md p-8 rounded-lg shadow-lg max-w-md w-full pointer-events-auto">
+                <h2 class="text-2xl font-bold neon-text mb-2 text-center">E-Mail-Bestätigung</h2>
+                <p class="text-gray-400 mb-4 text-center">Bitte überprüfe deine E-Mail und gib den 6-stelligen Code ein.</p>
+                <form id="confirmation-form" class="space-y-4">
+                    <div class="input-field">
+                        <label for="confirmation-code" class="block text-sm text-gray-400">Bestätigungscode</label>
+                        <input type="text" id="confirmation-code" class="w-full bg-gray-800 border border-purple-500 rounded-md p-2 text-white placeholder-gray-500" required placeholder="123456" maxlength="6">
+                    </div>
+                    <button type="submit" class="neon-button w-full py-2">Bestätigen</button>
+                </form>
+                <button id="change-email" class="mt-2 text-purple-400 hover:text-pink-500 w-full text-center">E-Mail-Adresse ändern</button>
+            </div>
         </div>
-        <div id="cookie-settings" class="space-y-4 hidden">
-          <div class="flex items-center">
-            <input type="checkbox" id="necessary-cookies" checked disabled class="mr-2">
-            <label for="necessary-cookies" class="text-gray-400">Notwendige Cookies (immer aktiv)</label>
-          </div>
-          <div class="flex items-center">
-            <input type="checkbox" id="analytics-cookies" class="mr-2">
-            <label for="analytics-cookies" class="text-gray-400">Analytics-Cookies</label>
-          </div>
-          <div class="flex items-center">
-            <input type="checkbox" id="marketing-cookies" class="mr-2">
-            <label for="marketing-cookies" class="text-gray-400">Marketing-Cookies</label>
-          </div>
-          <button id="save-cookie-settings" class="neon-button w-full">Einstellungen speichern</button>
+
+        <!-- Cookie-Consent-Modal -->
+        <div id="cookie-consent-modal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden z-50 pointer-events-none">
+            <div class="card bg-gray-900 bg-opacity-20 backdrop-blur-md p-8 rounded-lg shadow-lg max-w-md w-full pointer-events-auto">
+                <h2 class="text-2xl font-bold neon-text mb-4 text-center">Datenschutz-Einstellungen</h2>
+                <p class="text-gray-400 mb-4 text-center">Wir verwenden Cookies, um unsere Website zu verbessern. Bitte wähle deine Präferenzen.</p>
+                <div id="cookie-buttons" class="space-y-4">
+                    <button id="accept-all-cookies" class="neon-button w-full py-2">Alle akzeptieren</button>
+                    <button id="accept-necessary-cookies" class="neon-button w-full py-2">Nur notwendige akzeptieren</button>
+                    <button id="customize-cookies" class="neon-button w-full py-2">Einstellungen anpassen</button>
+                </div>
+                <div id="cookie-settings" class="space-y-4 hidden">
+                    <div class="flex items-center">
+                        <input type="checkbox" id="necessary-cookies" checked disabled class="mr-2">
+                        <label for="necessary-cookies" class="text-gray-400">Notwendige Cookies (immer aktiv)</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="analytics-cookies" class="mr-2">
+                        <label for="analytics-cookies" class="text-gray-400">Analytics-Cookies</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="marketing-cookies" class="mr-2">
+                        <label for="marketing-cookies" class="text-gray-400">Marketing-Cookies</label>
+                    </div>
+                    <button id="save-cookie-settings" class="neon-button w-full py-2">Einstellungen speichern</button>
+                </div>
+                <p class="text-gray-400 mt-4 text-center">
+                    Weitere Infos in unserer <a href="./impressum.html#datenschutz" class="text-purple-600 hover:text-pink-500">Datenschutzerklärung</a>
+                </p>
+            </div>
         </div>
-        <p class="text-gray-400 mt-4 text-center">
-          Weitere Infos in unserer <a href="impressum.html#datenschutz" class="text-purple-400 hover:text-pink-500">Datenschutzerklärung</a>.
-        </p>
-      </div>
-    </div>
-  </main>
+    </main>
 
-  <!-- Mobile-Navbar -->
-  <nav class="fixed bottom-0 w-full bg-gray-900 bg-opacity-90 p-4 flex justify-around md:hidden z-50">
-    <a href="index.html" class="text-white"><img src="../../assets/icons/home.svg" alt="Home" class="h-6"></a>
-    <a href="projects.html" class="text-white"><img src="../../assets/icons/projects.svg" alt="Projekte" class="h-6"></a>
-    <a href="stats.html" class="text-white"><img src="../../assets/icons/stats.svg" alt="Stats" class="h-6"></a>
-    <a href="impressum.html" class="text-white"><img src="../../assets/icons/info.svg" alt="Impressum" class="h-6"></a>
-    <a href="https://x.com" target="_blank"><img src="../../assets/icons/twitter.svg" alt="Twitter/X" class="h-6"></a>
-    <button id="profile-icon-mobile" class="text-white"><img src="../../assets/icons/profile.svg" alt="Profile" class="h-6"></button>
-  </nav>
+    <!-- Mobile-Navbar -->
+    <nav class="fixed bottom-0 w-full bg-gray-900 bg-opacity-20 backdrop-blur-md p-4 flex justify-around md:hidden z-50 animate-nav-load">
+        <a href="./index.html" class="nav-link group">
+            <div class="nav-icon-container p-2 rounded-full transition-all duration-300 group-hover:bg-blue-50 group-hover:bg-opacity-30 group-hover:scale-110">
+                <img src="./assets/icons/home.svg" alt="Home" class="h-6 neon-icon">
+            </div>
+        </a>
+        <a href="./projects.html" class="nav-link group">
+            <div class="nav-icon-container p-2 rounded-full transition-all duration-300 group-hover:bg-purple-900 group-hover:bg-opacity-30 group-hover:scale-110">
+                <img src="./assets/icons/projects.svg" alt="Projekte" class="h-6 neon-icon">
+            </div>
+        </a>
+        <a href="./stats.html" class="nav-link group">
+            <div class="nav-icon-container p-2 rounded-full transition-all duration-300 group-hover:bg-purple-900 group-hover:bg-opacity-30 group-hover:scale-110">
+                <img src="./assets/icons/stats.svg" alt="Stats" class="h-6 neon-icon">
+            </div>
+        </a>
+        <a href="./impressum.html" class="nav-link group">
+            <div class="nav-icon-container p-2 rounded-full transition-all duration-300 group-hover:bg-purple-900 group-hover:bg-opacity-30 group-hover:scale-110">
+                <img src="./assets/icons/info.svg" alt="Impressum" class="h-6 neon-icon">
+            </div>
+        </a>
+        <a href="https://x.com" target="_blank" class="nav-link group">
+            <div class="nav-icon-container p-2 rounded-full transition-all duration-300 group-hover:bg-purple-900 group-hover:bg-opacity-30 group-hover:scale-110">
+                <img src="./assets/icons/twitter.svg" alt="Twitter/X" class="h-6 neon-icon">
+            </div>
+        </a>
+        <button id="profile-icon-mobile" class="nav-link group">
+            <div class="nav-icon-container p-2 rounded-full transition-all duration-300 group-hover:bg-purple-900 group-hover:bg-opacity-30 group-hover:scale-110">
+                <img src="./assets/icons/profile.svg" alt="Profile" class="h-6 neon-icon">
+            </div>
+        </button>
+    </nav>
 
-  <!-- Footer -->
-  <footer class="bg-black p-4">
-    <div class="container mx-auto px-2 grid grid-cols-1 md:grid-cols-3 gap-6 text-gray-400">
-      <div>
-        <h3 class="text-purple-500 font-bold mb-2">Socials</h3>
-        <a href="#" class="block"><img src="../../assets/icons/discord.svg" alt="Discord" class="h-5 inline mr-2">Discord</a>
-        <a href="#" class="block"><img src="../../assets/icons/github.svg" alt="GitHub" class="h-5 inline mr-2">GitHub</a>
-      </div>
-      <div>
-        <h3 class="text-purple-500 font-bold mb-2">Navigation</h3>
-        <a href="index.html" class="block">Home</a>
-        <a href="projects.html" class="block">Projekte</a>
-        <a href="stats.html" class="block">Stats</a>
-        <a href="impressum.html" class="block">Impressum</a>
-      </div>
-      <div>
-        <h3 class="text-purple-500 font-bold mb-2">Rechtliches</h3>
-        <a href="impressum.html" class="block">Impressum</a>
-        <a href="impressum.html#datenschutz" class="block">Datenschutz</a>
-      </div>
-    </div>
-    <div class="border-t border-purple-500 mt-4 pt-2 text-center">
-      <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="neon-button">Nach oben</button>
-      <p class="mt-2 text-gray-400">© 2025 OCTRA. Alle Rechte vorbehalten.</p>
-    </div>
-  </footer>
+    <!-- Footer -->
+    <footer class="bg-gray-900 bg-opacity-20 backdrop-blur-md p-4 relative z-10">
+        <div class="container mx-auto px-2 grid grid-cols-1 md:grid-cols-3 gap-6 text-gray-400">
+            <div>
+                <h3 class="text-purple-500 font-bold mb-2 neon-text">Socials</h3>
+                <a href="https://discord.com" class="block"><img src="./assets/icons/discord.svg" alt="Discord" class="h-5 inline mr-2 neon-icon">Discord</a>
+                <a href="https://github.com" class="block"><img src="./assets/icons/github.svg" alt="GitHub" class="h-5 inline mr-2 neon-icon">GitHub</a>
+            </div>
+            <div>
+                <h3 class="text-purple-500 font-bold mb-2 neon-text">Navigation</h3>
+                <a href="./index.html" class="block neon-text">Home</a>
+                <a href="./projects.html" class="block neon-text">Projekte</a>
+                <a href="./stats.html" class="block neon-text">Stats</a>
+                <a href="./impressum.html" class="block neon-text">Impressum</a>
+            </div>
+            <div>
+                <h3 class="text-purple-500 font-bold mb-2 neon-text">Rechtliches</h3>
+                <a href="./impressum.html" class="block neon-text">Impressum</a>
+                <a href="./impressum.html#datenschutz" class="block neon-text">Datenschutz</a>
+            </div>
+        </div>
+        <div class="border-t border-purple-500 mt-4 pt-2 text-center">
+            <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="neon-button py-2">Nach oben</button>
+            <p class="mt-2 text-gray-400">© 2025 OCTRA. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
 
-  <!-- Skripte -->
-  <script src="../js/cookie.js"></script>
-  <script src="../js/animations.js"></script>
-  <script src="../js/nav.js"></script>
-  <script src="../js/auth.js"></script>
+    <!-- Skripte -->
+    <script defer src="./scripts/particles.js"></script>
+    <script defer src="./scripts/particles-config.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+    <script defer src="./scripts/cookie.js"></script>
+    <script defer src="./scripts/animations.js"></script>
+    <script defer src="./scripts/nav.js"></script>
+    <script defer src="./scripts/auth.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('nav a').forEach(link => {
+                const href = link.getAttribute('href')?.replace(/^\.\//, '');
+                if (href === currentPath) {
+                    link.classList.add('active');
+                }
+            });
+
+            // Debugging
+            console.log('custom.css loaded:', !!document.querySelector('link[href="./styles/custom.css"]'));
+            console.log('particles.js loaded:', !!document.querySelector('script[src="./scripts/particles.js"]'));
+            console.log('supabase.js loaded:', !!window.supabase);
+            console.log('auth.js loaded:', !!document.querySelector('script[src="./scripts/auth.js"]'));
+            console.log('Icons loaded:', document.querySelectorAll('nav img').length);
+            console.log('Particles div:', !!document.getElementById('particles-js'));
+        });
+    </script>
 </body>
 </html>

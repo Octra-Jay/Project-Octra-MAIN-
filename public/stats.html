@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OCTRA - Statistiken</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/styles/custom.css">
+  <link rel="stylesheet" href="./styles/custom.css">
 </head>
 <body class="bg-black text-white font-poppins">
   <!-- Partikel-Hintergrund -->
@@ -64,14 +64,34 @@
     </div>
   </section>
 
-  <!-- Mobile-Navbar -->
-  <nav class="fixed bottom-0 w-full bg-gray-900 bg-opacity-20 backdrop-blur-md p-4 flex justify-around md:hidden z-50">
-    <a href="/index.html" class="text-white hover:scale-110 transition-transform duration-200"><img src="/assets/icons/home.svg" alt="Home" class="h-6"></a>
-    <a href="/projects.html" class="text-white hover:scale-110 transition-transform duration-200"><img src="/assets/icons/projects.svg" alt="Projekte" class="h-6"></a>
-    <a href="/stats.html" class="text-white hover:scale-110 transition-transform duration-200 active"><img src="/assets/icons/stats.svg" alt="Stats" class="h-6"></a>
-    <a href="/impressum.html" class="text-white hover:scale-110 transition-transform duration-200"><img src="/assets/icons/info.svg" alt="Impressum" class="h-6"></a>
-    <a href="https://x.com" target="_blank" class="text-white hover:scale-110 transition-transform duration-200"><img src="/assets/icons/twitter.svg" alt="Twitter/X" class="h-6"></a>
-  </nav>
+<!-- Mobile-Navbar -->
+<nav class="fixed bottom-0 w-full bg-gray-900 bg-opacity-20 backdrop-blur-md p-4 flex justify-around md:hidden z-50 animate-nav-load">
+  <a href="./index.html" class="nav-link group">
+    <div class="nav-icon-container p-2 rounded-full transition-all duration-300 group-hover:bg-purple-900 group-hover:bg-opacity-30 group-hover:scale-110">
+      <img src="./assets/icons/home.svg" alt="Home" class="h-6 neon-icon">
+    </div>
+  </a>
+  <a href="./projects.html" class="nav-link group">
+    <div class="nav-icon-container p-2 rounded-full transition-all duration-300 group-hover:bg-purple-900 group-hover:bg-opacity-30 group-hover:scale-110">
+      <img src="./assets/icons/projects.svg" alt="Projekte" class="h-6 neon-icon">
+    </div>
+  </a>
+  <a href="./stats.html" class="nav-link active group">
+    <div class="nav-icon-container p-2 rounded-full bg-purple-900 bg-opacity-30 scale-105 transition-all duration-300">
+      <img src="./assets/icons/stats.svg" alt="Stats" class="h-6 neon-icon">
+    </div>
+  </a>
+  <a href="./impressum.html" class="nav-link group">
+    <div class="nav-icon-container p-2 rounded-full transition-all duration-300 group-hover:bg-purple-900 group-hover:bg-opacity-30 group-hover:scale-110">
+      <img src="./assets/icons/info.svg" alt="Impressum" class="h-6 neon-icon">
+    </div>
+  </a>
+  <a href="https://x.com" target="_blank" class="nav-link group">
+    <div class="nav-icon-container p-2 rounded-full transition-all duration-300 group-hover:bg-purple-900 group-hover:bg-opacity-30 group-hover:scale-110">
+      <img src="./assets/icons/twitter.svg" alt="Twitter/X" class="h-6 neon-icon">
+    </div>
+  </a>
+</nav>
 
   <!-- Footer -->
   <footer class="bg-gray-900 bg-opacity-20 backdrop-blur-md p-3 relative z-10 text-center text-gray-400">
@@ -79,8 +99,8 @@
   </footer>
 
   <!-- Skripte -->
-  <script defer src="/scripts/particles.js"></script>
-  <script defer src="/scripts/particles-config.js"></script>
+  <script defer src="./scripts/particles.js"></script>
+  <script defer src="./scripts/particles-config.js"></script>
   <script>
     function toggleAccordion(id) {
       const content = document.getElementById(id);
@@ -103,9 +123,9 @@
       });
 
       // Debugging
-      console.log('custom.css loaded:', !!document.querySelector('link[href="/styles/custom.css"]'));
-      console.log('particles.js loaded:', !!document.querySelector('script[src="/scripts/particles.js"]'));
-      console.log('particles-config.js loaded:', !!document.querySelector('script[src="/scripts/particles-config.js"]'));
+      console.log('custom.css loaded:', !!document.querySelector('link[href="./styles/custom.css"]'));
+      console.log('particles.js loaded:', !!document.querySelector('script[src="./scripts/particles.js"]'));
+      console.log('particles-config.js loaded:', !!document.querySelector('script[src="./scripts/particles-config.js"]'));
       console.log('Icons loaded:', document.querySelectorAll('nav img').length);
       console.log('Particles div:', !!document.getElement.getElementById('particles-js'));
     });
