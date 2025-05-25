@@ -5,29 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OCTRA - Statistiken</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="../css/custom.css">
+  <link rel="stylesheet" href="/styles/custom.css">
 </head>
 <body class="bg-black text-white font-poppins">
   <!-- Partikel-Hintergrund -->
   <div id="particles-js" class="fixed inset-0 z-0"></div>
 
   <!-- Hero-Section -->
-  <section class="min-h-screen flex flex-col justify-center items-center relative z-10 pt-8 px-4">
-    <div class="container mx-auto text-center bg-gray-900 bg-opacity-30 backdrop-blur-sm rounded-lg p-6">
-      <h1 class="text-5xl md:text-7xl font-bold text-white neon-text animate-glow">Statistiken</h1>
-      <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
-        Entdecke die Zahlen hinter OCTRA und deinem Profil.
+  <section class="min-h-screen flex flex-col justify-center items-center relative z-10 pt-8 px-4 animate-hero-load">
+    <div class="container mx-auto text-center bg-gray-900 bg-opacity-20 backdrop-blur-md rounded-lg p-8">
+      <h1 class="text-5xl md:text-7xl font-bold text-white neon-text animate-pulse-glow">Statistiken</h1>
+      <p class="text-xl md:text-2xl text-gray-300 mt-4 max-w-3xl mx-auto animate-fade-in">
+        Tauche ein in die Zahlenwelt von OCTRA und deinem Profil.
       </p>
     </div>
   </section>
 
-  <!-- Statistik-Section mit ausklappbaren Karten -->
+  <!-- Statistik-Section -->
   <section class="py-20 relative z-10">
     <div class="container mx-auto px-4">
-      <h2 class="text-4xl font-bold text-white neon-text mb-12 text-center">Unsere Statistiken</h2>
-      <div class="space-y-6 max-w-3xl mx-auto">
+      <h2 class="text-4xl font-bold text-white neon-text mb-12 text-center animate-fade-in">Unsere Statistiken</h2>
+      <div class="space-y-6 max-w-4xl mx-auto md:grid md:grid-cols-2 md:gap-6 md:space-y-0">
         <!-- Karte 1 -->
-        <div class="card bg-gray-900 bg-opacity-30 backdrop-blur-sm rounded-lg overflow-hidden">
+        <div class="card bg-gray-900 bg-opacity-20 backdrop-blur-md rounded-lg overflow-hidden animate-card-load" style="--delay: 0.2s;">
           <button class="w-full text-left p-6 flex justify-between items-center neon-text hover:bg-gray-800 hover:bg-opacity-20 transition-all duration-300" onclick="toggleAccordion('website-stats')">
             <h3 class="text-2xl font-bold text-white">Website- & Server-Statistiken</h3>
             <svg id="website-stats-icon" class="w-6 h-6 text-purple-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -39,11 +39,12 @@
               <li><strong>Projekte:</strong> 100+</li>
               <li><strong>Nutzer:</strong> 10.000+</li>
               <li><strong>Server-Uptime:</strong> 99,9%</li>
+              <li><strong>API-Calls:</strong> 1.000.000+</li>
             </ul>
           </div>
         </div>
         <!-- Karte 2 -->
-        <div class="card bg-gray-900 bg-opacity-30 backdrop-blur-sm rounded-lg overflow-hidden">
+        <div class="card bg-gray-900 bg-opacity-20 backdrop-blur-md rounded-lg overflow-hidden animate-card-load" style="--delay: 0.4s;">
           <button class="w-full text-left p-6 flex justify-between items-center neon-text hover:bg-gray-800 hover:bg-opacity-20 transition-all duration-300" onclick="toggleAccordion('profile-stats')">
             <h3 class="text-2xl font-bold text-white">Persönliche Profil-Statistiken</h3>
             <svg id="profile-stats-icon" class="w-6 h-6 text-purple-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -53,7 +54,8 @@
           <div id="profile-stats" class="accordion-content p-6 text-gray-300 max-h-0 opacity-0 overflow-hidden transition-all duration-500">
             <ul class="space-y-4">
               <li><strong>Benutzername:</strong> [Dein Name]</li>
-              <li><strong>Erstellte Projekte:</strong> 5</li>
+              <li><strong>Projekte:</strong> 5</li>
+              <li><strong>Beiträge:</strong> 20</li>
               <li><strong>Mitglied seit:</strong> Januar 2025</li>
             </ul>
           </div>
@@ -63,24 +65,23 @@
   </section>
 
   <!-- Mobile-Navbar -->
-  <nav class="fixed bottom-0 w-full bg-gray-900 bg-opacity-30 backdrop-blur-sm p-4 flex justify-around md:hidden z-50">
-    <a href="index.html" class="text-white hover:scale-110 transition-transform duration-200"><img src="../../assets/icons/home.svg" alt="Home" class="h-6"></a>
-    <a href="projects.html" class="text-white hover:scale-110 transition-transform duration-200"><img src="../../assets/icons/projects.svg" alt="Projekte" class="h-6"></a>
-    <a href="stats.html" class="text-white hover:scale-110 transition-transform duration-200 active"><img src="../../assets/icons/stats.svg" alt="Stats" class="h-6"></a>
-    <a href="impressum.html" class="text-white hover:scale-110 transition-transform duration-200"><img src="../../assets/icons/info.svg" alt="Impressum" class="h-6"></a>
-    <a href="https://x.com" target="_blank" class="text-white hover:scale-110 transition-transform duration-200"><img src="../../assets/icons/twitter.svg" alt="Twitter/X" class="h-6"></a>
+  <nav class="fixed bottom-0 w-full bg-gray-900 bg-opacity-20 backdrop-blur-md p-4 flex justify-around md:hidden z-50">
+    <a href="/index.html" class="text-white hover:scale-110 transition-transform duration-200"><img src="/assets/icons/home.svg" alt="Home" class="h-6"></a>
+    <a href="/projects.html" class="text-white hover:scale-110 transition-transform duration-200"><img src="/assets/icons/projects.svg" alt="Projekte" class="h-6"></a>
+    <a href="/stats.html" class="text-white hover:scale-110 transition-transform duration-200 active"><img src="/assets/icons/stats.svg" alt="Stats" class="h-6"></a>
+    <a href="/impressum.html" class="text-white hover:scale-110 transition-transform duration-200"><img src="/assets/icons/info.svg" alt="Impressum" class="h-6"></a>
+    <a href="https://x.com" target="_blank" class="text-white hover:scale-110 transition-transform duration-200"><img src="/assets/icons/twitter.svg" alt="Twitter/X" class="h-6"></a>
   </nav>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 bg-opacity-30 backdrop-blur-sm p-4 relative z-10 text-center text-gray-400">
+  <footer class="bg-gray-900 bg-opacity-20 backdrop-blur-md p-4 relative z-10 text-center text-gray-400">
     <p>© 2025 OCTRA. Alle Rechte vorbehalten.</p>
   </footer>
 
   <!-- Skripte -->
-  <script defer src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  <script defer src="../js/particles-config.js"></script>
+  <script defer src="/scripts/particles.min.js"></script>
+  <script defer src="/scripts/particles-config.js"></script>
   <script>
-    // Akkordeon-Funktion für ausklappbare Karten
     function toggleAccordion(id) {
       const content = document.getElementById(id);
       const icon = document.getElementById(id + '-icon');
@@ -91,15 +92,22 @@
       icon.classList.toggle('rotate-180', isHidden);
     }
 
-    // Aktive Klasse für Mobile-Navbar
     document.addEventListener('DOMContentLoaded', () => {
       const currentPath = window.location.pathname.split('/').pop() || 'index.html';
       const navLinks = document.querySelectorAll('nav a');
       navLinks.forEach(link => {
-        if (link.getAttribute('href') === currentPath) {
+        const href = link.getAttribute('href').replace(/^\//, '');
+        if (href === currentPath) {
           link.classList.add('active');
         }
       });
+
+      // Debugging
+      console.log('custom.css loaded:', !!document.querySelector('link[href="/styles/custom.css"]'));
+      console.log('particles.min.js loaded:', !!document.querySelector('script[src="/scripts/particles.min.js"]'));
+      console.log('particles-config.js loaded:', !!document.querySelector('script[src="/scripts/particles-config.js"]'));
+      console.log('Icons loaded:', document.querySelectorAll('nav img').length);
+      console.log('Particles div:', !!document.getElementById('particles-js'));
     });
   </script>
 </body>

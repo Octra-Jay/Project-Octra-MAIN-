@@ -1,16 +1,3 @@
-{
-  "name": "octra-stats",
-  "version": "1.0.0",
-  "description": "OCTRA Statistiken Seite",
-  "scripts": {
-    "start": "vercel dev",
-    "deploy": "vercel --prod"
-  },
-  "dependencies": {
-    "particles.js": "^2.0.0";
-    "next.js":"^22.0.0"
-  },
-  "devDependencies": {
-    "vercel": "^32.0.0"
-  }
-}
+node_modules/
+.vercel/
+*.log

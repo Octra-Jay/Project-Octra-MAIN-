@@ -1,2 +1,0 @@
-# OctraCore
-OctraCore is Special
