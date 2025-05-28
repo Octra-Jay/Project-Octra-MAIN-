@@ -1,6 +1,6 @@
 // public/scripts/auth.js
 import { supabase } from './supabase.js';
-
+import { Analytics } from "@vercel/analytics/next"
 console.log('auth.js loaded');
 
 // DOM-Elemente
