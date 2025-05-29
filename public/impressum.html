@@ -3,58 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OCTRA - Impressum</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="./styles/custom.css">
+  <title>Impressum | Octra</title>
+  <link rel="stylesheet" href="styles/custom.css">
+  <meta name="theme-color" content="#8f5fff">
 </head>
-<body class="bg-black text-white font-poppins">
-  <!-- Partikel-Hintergrund -->
-  <div id="particles-js" class="fixed inset-0 z-0"></div>
-
-  <!-- Hero-Section -->
-  <section class="min-h-screen flex items-center justify-center relative z-10 pt-8 px-4 animate-hero-load">
-    <div class="container mx-auto text-center bg-gray-900 bg-opacity-20 backdrop-blur-md rounded-lg p-8">
-      <h1 class="text-5xl md:text-7xl font-bold text-white neon-text animate-pulse-glow">Impressum</h1>
-      <p class="text-xl md:text-2xl text-gray-300 mt-4 max-w-3xl mx-auto animate-fade-in">
-        Rechtliche Informationen zu OCTRA.
-      </p>
-    </div>
-  </section>
-
-  <!-- Mobile-Navbar -->
-  <nav class="fixed bottom-0 w-full bg-gray-900 bg-opacity-20 backdrop-blur-md p-4 flex justify-around md:hidden z-50">
-    <a href="./index.html" class="text-white hover:scale-110 transition-transform duration-200"><img src="./assets/icons/home.svg" alt="Home" class="h-6"></a>
-    <a href="./projects.html" class="text-white hover:scale-110 transition-transform duration-200"><img src="./assets/icons/projects.svg" alt="Projekte" class="h-6"></a>
-    <a href="./stats.html" class="text-white hover:scale-110 transition-transform duration-200"><img src="./assets/icons/stats.svg" alt="Stats" class="h-6"></a>
-    <a href="./impressum.html" class="text-white hover:scale-110 transition-transform duration-200 active"><img src="./assets/icons/info.svg" alt="Impressum" class="h-6"></a>
-    <a href="https://x.com" target="_blank" class="text-white hover-scale-110 transition-transform duration-200"><img src="./assets/icons/twitter.svg" alt="Twitter/X" class="h-6"></a>
+<body class="octra-bg">
+  <div id="octra-ambient"></div>
+  <div class="octra-container">
+    <header class="octra-header">
+      <a href="index.html" class="octra-logo"><img src="assets/logo/logo-anim.gif" alt="Octra Logo" height="48"></a>
+      <nav class="octra-nav">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projekte</a>
+        <a href="releases.html">Releases</a>
+        <a href="info.html">Informationen</a>
+        <a href="stats.html">Stats</a>
+        <a href="server.html">Server</a>
+        <a href="wiki.html">Wiki</a>
+        <a href="credits.html">Credits</a>
+        <a href="impressum.html" class="active">Impressum</a>
+      </nav>
+    </header>
+    <main class="octra-main octra-fadein">
+      <h1 class="octra-glow">Impressum</h1>
+      <section class="octra-section octra-slidein">
+        <h2>Angaben gemäß § 5 TMG</h2>
+        <p><strong>Projektleitung:</strong> Octra Development Team<br>
+        <strong>Kontakt:</strong> <a href="mailto:kontakt@octra.dev">kontakt@octra.dev</a><br>
+        <strong>GitHub:</strong> <a href="https://github.com/Octra-Project" target="_blank">Octra-Project</a></p>
+        <p>Dies ist ein Open-Source-Projekt. Verantwortlich für den Inhalt sind die jeweiligen Contributor:innen. Keine kommerzielle Nutzung.</p>
+      </section>
+      <section class="octra-section octra-slidein" style="animation-delay:0.2s;">
+        <h2>Haftungsausschluss</h2>
+        <p>Die bereitgestellten Informationen auf dieser Website wurden sorgfältig geprüft. Dennoch übernehmen wir keine Haftung für die Aktualität, Vollständigkeit oder Richtigkeit der Inhalte. Für externe Links übernehmen wir keine Verantwortung.</p>
+      </section>
+      <section class="octra-section octra-slidein" style="animation-delay:0.4s;">
+        <h2>Datenschutz</h2>
+        <p>Es werden keine personenbezogenen Daten ohne ausdrückliche Zustimmung gespeichert. Für weitere Informationen siehe <a href="#">Datenschutzerklärung</a>.</p>
+      </section>
+    </main>
+    <footer class="octra-footer octra-fadein" style="animation-delay:0.6s;">
+      <p>&copy; 2025 Octra – Das ultimative All-in-One-System</p>
+    </footer>
+  </div>
+  <nav class="octra-mobile-nav">
+    <a href="index.html"><img src="assets/icons/home.svg" alt="Home"></a>
+    <a href="projects.html"><img src="assets/icons/projects.svg" alt="Projekte"></a>
+    <a href="stats.html"><img src="assets/icons/stats.svg" alt="Stats"></a>
+    <a href="impressum.html"><img src="assets/icons/info.svg" alt="Impressum"></a>
+    <a href="profile.html"><img src="assets/icons/profile.svg" alt="Profil"></a>
   </nav>
-
-  <!-- Footer -->
-  <footer class="bg-gray-900 bg-opacity-20 backdrop-blur-md p-4 relative z-10 text-center text-gray-400">
-    <p>&copy; 2025 OCTRA. Alle Rechte vorbehalten.</p>
-  </footer>
-
-  <!-- Skripte -->
-  <script defer src="./scripts/particles.js"></script>
-  <script defer src="./scripts/particles-config.js"></script>
+  <script src="scripts/animations.js"></script>
+  <script src="scripts/particles.min.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-      document.querySelectorAll('nav a').forEach(link => {
-        const href = link.getAttribute('href').replace(/^\//, '');
-        if (href === currentPath) {
-          link.classList.add('active');
-        }
-      });
-
-      // Debugging
-      console.log('custom.css loaded:', !!document.querySelector('link[href="./styles/custom.css"]'));
-      console.log('particles.js loaded:', !!document.querySelector('script[src="./scripts/particles.js"]'));
-      console.log('particles-config.js loaded:', !!document.querySelector('script[src="./scripts/particles-config.js"]'));
-      console.log('Icons loaded:', document.querySelectorAll('nav img').length);
-      console.log('Particles div:', !!document.getElementById('particles-js'));
-    });
+    // Ambient Animation (z.B. Partikel, Glow)
+    particlesJS.load('octra-ambient', 'scripts/particles-config.js');
   </script>
 </body>
 </html>

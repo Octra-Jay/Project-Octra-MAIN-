@@ -175,38 +175,16 @@
         </div>
     </main>
 
-    <!-- Mobile-Navbar -->
-    <nav class="fixed bottom-0 w-full bg-gray-900 bg-opacity-20 backdrop-blur-md p-4 flex justify-around md:hidden z-50 animate-nav-load">
-        <a href="./index.html" class="nav-link group">
-            <div class="nav-icon-container p-2 rounded-full transition-all duration-300 group-hover:bg-blue-50 group-hover:bg-opacity-30 group-hover:scale-110">
-                <img src="./assets/icons/home.svg" alt="Home" class="h-6 neon-icon">
-            </div>
-        </a>
-        <a href="./projects.html" class="nav-link group">
-            <div class="nav-icon-container p-2 rounded-full transition-all duration-300 group-hover:bg-purple-900 group-hover:bg-opacity-30 group-hover:scale-110">
-                <img src="./assets/icons/projects.svg" alt="Projekte" class="h-6 neon-icon">
-            </div>
-        </a>
-        <a href="./stats.html" class="nav-link group">
-            <div class="nav-icon-container p-2 rounded-full transition-all duration-300 group-hover:bg-purple-900 group-hover:bg-opacity-30 group-hover:scale-110">
-                <img src="./assets/icons/stats.svg" alt="Stats" class="h-6 neon-icon">
-            </div>
-        </a>
-        <a href="./impressum.html" class="nav-link group">
-            <div class="nav-icon-container p-2 rounded-full transition-all duration-300 group-hover:bg-purple-900 group-hover:bg-opacity-30 group-hover:scale-110">
-                <img src="./assets/icons/info.svg" alt="Impressum" class="h-6 neon-icon">
-            </div>
-        </a>
-        <a href="https://x.com" target="_blank" class="nav-link group">
-            <div class="nav-icon-container p-2 rounded-full transition-all duration-300 group-hover:bg-purple-900 group-hover:bg-opacity-30 group-hover:scale-110">
-                <img src="./assets/icons/twitter.svg" alt="Twitter/X" class="h-6 neon-icon">
-            </div>
-        </a>
-        <button id="profile-icon-mobile" class="nav-link group">
-            <div class="nav-icon-container p-2 rounded-full transition-all duration-300 group-hover:bg-purple-900 group-hover:bg-opacity-30 group-hover:scale-110">
-                <img src="./assets/icons/profile.svg" alt="Profile" class="h-6 neon-icon">
-            </div>
-        </button>
+    <!-- Ambient Container -->
+    <div id="octra-ambient"></div>
+
+    <!-- Mobile Navigation -->
+    <nav class="octra-mobile-nav">
+        <a href="index.html"><img src="assets/icons/home.svg" alt="Home"></a>
+        <a href="projects.html"><img src="assets/icons/projects.svg" alt="Projekte"></a>
+        <a href="stats.html"><img src="assets/icons/stats.svg" alt="Stats"></a>
+        <a href="impressum.html"><img src="assets/icons/info.svg" alt="Impressum"></a>
+        <a href="profile.html"><img src="assets/icons/profile.svg" alt="Profil"></a>
     </nav>
 
     <!-- Footer -->
@@ -262,6 +240,9 @@
             console.log('Icons loaded:', document.querySelectorAll('nav img').length);
             console.log('Particles div:', !!document.getElementById('particles-js'));
         });
+
+        // Load particles configuration
+        particlesJS.load('octra-ambient', 'scripts/particles-config.js');
     </script>
 </body>
 </html>

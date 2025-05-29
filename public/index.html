@@ -14,62 +14,65 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./styles/custom.css">
 </head>
-<body class="bg-black text-white font-poppins">
-    <!-- Partikel-Hintergrund -->
-    <div id="particles-js" class="fixed inset-0 z-0"></div>
-
-    <!-- Hero-Section -->
-    <main class="min-h-screen flex flex-col justify-center items-center relative z-10 pt-20 pb-20 px-4 animate-hero-load">
-        <h1 class="text-5xl md:text-6xl font-bold neon-text mb-4 text-center scroll-animate" data-animation="typing">Willkommen bei OCTRA</h1>
-        <p class="text-lg md:text-xl text-gray-400 mb-8 text-center max-w-2xl scroll-animate" data-animation="fade">
-            Deine Plattform für innovative Projekte, Statistiken und mehr. Tauche ein in die Neon-Welt von OCTRA!
-        </p>
-        <div class="flex space-x-4">
-            <a href="./auth.html" class="neon-button px-6 py-3 scroll-animate" data-animation="fade">Jetzt starten</a>
-            <a href="./projects.html" class="neon-button px-6 py-3 bg-transparent border border-purple-500 scroll-animate" data-animation="fade">Projekte entdecken</a>
-        </div>
-    </main>
-
-    <!-- Über OCTRA -->
-    <section class="relative z-10 py-16 bg-gray-900 bg-opacity-20 backdrop-blur-md">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold neon-text mb-6 scroll-animate" data-animation="typing">Über OCTRA</h2>
-            <p class="text-gray-400 max-w-3xl mx-auto scroll-animate" data-animation="fade">
-                OCTRA ist deine Plattform für kreative und technische Projekte. Mit modernster Technologie und einem Neon-Design bieten wir dir Tools, Statistiken und Inspiration, um deine Ideen zum Leben zu erwecken.
-            </p>
-        </div>
+<body class="octra-bg">
+  <div id="octra-ambient"></div>
+  <header class="octra-header">
+    <a href="index.html" class="octra-logo"><img src="assets/logo/logo-anim.gif" alt="Octra Logo" height="56"></a>
+    <nav class="octra-nav">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projekte</a>
+      <a href="releases.html">Releases</a>
+      <a href="info.html">Informationen</a>
+      <a href="stats.html">Stats</a>
+      <a href="server.html">Server</a>
+      <a href="wiki.html">Wiki</a>
+      <a href="credits.html">Credits</a>
+      <a href="impressum.html">Impressum</a>
+    </nav>
+  </header>
+  <main class="octra-main octra-fadein">
+    <section class="octra-hero octra-section octra-slidein">
+      <h1 class="octra-glow">Willkommen bei OCTRA</h1>
+      <p class="octra-lead">Das ultimative All-in-One-System für Discord, Guilded & Web.<br>Modular, synchronisiert, futuristisch.</p>
+      <div class="octra-cta-group">
+        <a href="auth.html" class="octra-btn">Jetzt starten</a>
+        <a href="projects.html" class="octra-btn octra-btn-outline">Projekte entdecken</a>
+      </div>
     </section>
-
-    <!-- Features -->
-    <section class="relative z-10 py-16">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold neon-text mb-8 text-center scroll-animate" data-animation="typing">Features</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="card bg-gray-900 bg-opacity-20 backdrop-blur-md p-6 rounded-lg shadow-lg scroll-animate" data-animation="fade">
-                    <h3 class="text-xl font-bold neon-text mb-2">Projekte</h3>
-                    <p class="text-gray-400">Verwalte und präsentiere deine Projekte in einem stylischen Interface.</p>
-                </div>
-                <div class="card bg-gray-900 bg-opacity-20 backdrop-blur-md p-6 rounded-lg shadow-lg scroll-animate" data-animation="fade">
-                    <h3 class="text-xl font-bold neon-text mb-2">Statistiken</h3>
-                    <p class="text-gray-400">Erhalte detaillierte Einblicke in deine Fortschritte und Leistungen.</p>
-                </div>
-                <div class="card bg-gray-900 bg-opacity-20 backdrop-blur-md p-6 rounded-lg shadow-lg scroll-animate" data-animation="fade">
-                    <h3 class="text-xl font-bold neon-text mb-2">Community</h3>
-                    <p class="text-gray-400">Tritt unserer Community bei und vernetze dich mit Gleichgesinnten.</p>
-                </div>
-            </div>
-        </div>
+    <section class="octra-section octra-slidein" style="animation-delay:0.2s;">
+      <h2>Features</h2>
+      <ul class="octra-features">
+        <li>Modularer Bot & Webplattform</li>
+        <li>Plattformübergreifend: Discord, Guilded, Web</li>
+        <li>Live-Synchronisation & Leaderboards</li>
+        <li>Futuristisches, responsives UI/UX</li>
+        <li>Plugin-Manager & Dashboard</li>
+        <li>Mobile First, Dark Mode, Ambient-Animationen</li>
+      </ul>
     </section>
-
-    <!-- Call-to-Action -->
-    <section class="relative z-10 py-16 bg-gray-900 bg-opacity-20 backdrop-blur-md text-center">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold neon-text mb-4 scroll-animate" data-animation="typing">Bereit für den Einstieg?</h2>
-            <p class="text-gray-400 mb-6 scroll-animate" data-animation="fade">Melde dich an und starte deine Reise mit OCTRA!</p>
-            <a href="./auth.html" class="neon-button px-6 py-3 scroll-animate" data-animation="fade">Jetzt anmelden</a>
-        </div>
+    <section class="octra-section octra-slidein" style="animation-delay:0.4s;">
+      <h2>Projekte & Module</h2>
+      <div class="octra-cards">
+        <div class="octra-card">Economy, Casino & Games</div>
+        <div class="octra-card">Moderation & Management</div>
+        <div class="octra-card">Clansystem & Leaderboards</div>
+        <div class="octra-card">Musik, Verify, Statistik</div>
+        <div class="octra-card">Web-Dashboard & Plugins</div>
+      </div>
     </section>
-
+    <section class="octra-section octra-slidein" style="animation-delay:0.6s;">
+      <h2>Jetzt loslegen</h2>
+      <a href="auth.html" class="octra-btn octra-btn-glow">Kostenlos registrieren</a>
+    </section>
+  </main>
+  <footer class="octra-footer octra-fadein" style="animation-delay:0.8s;">
+    <p>&copy; 2025 Octra – Das ultimative All-in-One-System</p>
+  </footer>
+  <script src="scripts/animations.js"></script>
+  <script src="scripts/particles.min.js"></script>
+  <script>
+    particlesJS.load('octra-ambient', 'scripts/particles-config.js');
+  </script>
     <!-- Cookie-Consent-Modal -->
     <div id="cookie-consent-modal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden z-50 pointer-events-none">
         <div class="card bg-gray-900 bg-opacity-20 backdrop-blur-md p-8 rounded-lg shadow-lg max-w-md w-full pointer-events-auto">
