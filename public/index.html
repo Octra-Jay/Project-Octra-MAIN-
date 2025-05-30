@@ -1,200 +1,177 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <script>
-    const supabase = Supabase.createClient(
-        'https://hfowpjsdivftvvevikem.supabase.co',
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imhmb3dwanNkaXZmdHZ2ZXZpa2VtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDg0MzQ1NjYsImV4cCI6MjA2NDAxMDU2Nn0.eSVPUKLwYxyQIbwmjbdSJW4l272mcsRsOGImSUnh5E4'
-    );
-</script>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OCTRA - Willkommen</title>
+    <title>OCTRA – Willkommen</title>
+    <!-- Tailwind CSS CDN (aktuellste Version) -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./styles/custom.css">
+    <link rel="icon" href="assets/logo/logo.png">
 </head>
-<body class="octra-bg">
-  <div id="octra-ambient"></div>
-  <header class="octra-header">
-    <a href="index.html" class="octra-logo"><img src="assets/logo/logo-anim.gif" alt="Octra Logo" height="56"></a>
-    <nav class="octra-nav">
-      <a href="index.html">Home</a>
-      <a href="projects.html">Projekte</a>
-      <a href="releases.html">Releases</a>
-      <a href="info.html">Informationen</a>
-      <a href="stats.html">Stats</a>
-      <a href="server.html">Server</a>
-      <a href="wiki.html">Wiki</a>
-      <a href="credits.html">Credits</a>
-      <a href="impressum.html">Impressum</a>
-    </nav>
+<body class="octra-bg min-h-screen flex flex-col font-sans text-white bg-gradient-to-br from-[#1a002b] via-[#2d0a4a] to-[#3a0066]">
+  <div id="octra-ambient" class="fixed inset-0 -z-10 pointer-events-none"></div>
+  <header class="octra-header py-6 animate-nav-load bg-gradient-to-b from-[#2d0a4a]/80 to-transparent">
+    <div class="flex flex-col items-center gap-3">
+      <a href="index.html" class="octra-logo flex items-center gap-2">
+        <img src="assets/logo/logo-anim.gif" alt="Octra Logo" height="64" class="drop-shadow-neon animate-logo-fadein">
+        <span class="text-3xl md:text-4xl font-extrabold neon-text tracking-wide">OCTRA</span>
+      </a>
+      <nav class="octra-nav flex flex-wrap gap-3 justify-center mt-3 text-lg">
+        <a href="index.html" class="octra-nav-link">Home</a>
+        <a href="projects.html" class="octra-nav-link">Projekte</a>
+        <a href="releases.html" class="octra-nav-link">Releases</a>
+        <a href="info.html" class="octra-nav-link">Informationen</a>
+        <a href="stats.html" class="octra-nav-link">Stats</a>
+        <a href="server.html" class="octra-nav-link">Server</a>
+        <a href="wiki.html" class="octra-nav-link">Wiki</a>
+        <a href="credits.html" class="octra-nav-link">Credits</a>
+        <a href="impressum.html" class="octra-nav-link">Impressum</a>
+      </nav>
+    </div>
   </header>
-  <main class="octra-main octra-fadein">
-    <section class="octra-hero octra-section octra-slidein">
-      <h1 class="octra-glow">Willkommen bei OCTRA</h1>
-      <p class="octra-lead">Das ultimative All-in-One-System für Discord, Guilded & Web.<br>Modular, synchronisiert, futuristisch.</p>
-      <div class="octra-cta-group">
-        <a href="auth.html" class="octra-btn">Jetzt starten</a>
+  <main class="octra-main flex-1 flex flex-col items-center justify-center px-2 md:px-0">
+    <section class="octra-hero octra-section octra-slidein w-full max-w-3xl text-center py-12">
+      <h1 class="octra-glow text-5xl md:text-6xl font-extrabold mb-4 tracking-tight">Willkommen bei <span class="neon-text">OCTRA</span></h1>
+      <p class="octra-lead text-xl md:text-2xl mb-6 text-gray-200">Das ultimative All-in-One-System für Discord, Guilded & Web.<br>Modular, synchronisiert, futuristisch.</p>
+      <div class="octra-cta-group flex flex-col md:flex-row gap-4 justify-center">
+        <a href="auth.html" class="octra-btn octra-btn-glow">Jetzt starten</a>
         <a href="projects.html" class="octra-btn octra-btn-outline">Projekte entdecken</a>
       </div>
     </section>
-    <section class="octra-section octra-slidein" style="animation-delay:0.2s;">
-      <h2>Features</h2>
-      <ul class="octra-features">
-        <li>Modularer Bot & Webplattform</li>
-        <li>Plattformübergreifend: Discord, Guilded, Web</li>
-        <li>Live-Synchronisation & Leaderboards</li>
-        <li>Futuristisches, responsives UI/UX</li>
-        <li>Plugin-Manager & Dashboard</li>
-        <li>Mobile First, Dark Mode, Ambient-Animationen</li>
+    <section class="octra-section octra-slidein w-full max-w-4xl py-8" style="animation-delay:0.2s;">
+      <h2 class="text-3xl font-bold mb-3 neon-text">Features</h2>
+      <ul class="octra-features flex flex-wrap gap-4 justify-center text-lg">
+        <li class="octra-feature-card">Modularer Bot & Webplattform</li>
+        <li class="octra-feature-card">Plattformübergreifend: Discord, Guilded, Web</li>
+        <li class="octra-feature-card">Live-Synchronisation & Leaderboards</li>
+        <li class="octra-feature-card">Futuristisches, responsives UI/UX</li>
+        <li class="octra-feature-card">Plugin-Manager & Dashboard</li>
+        <li class="octra-feature-card">Mobile First, Dark Mode, Ambient-Animationen</li>
       </ul>
     </section>
-    <section class="octra-section octra-slidein" style="animation-delay:0.4s;">
-      <h2>Projekte & Module</h2>
-      <div class="octra-cards">
+    <section class="octra-section octra-slidein w-full max-w-4xl py-8" style="animation-delay:0.4s;">
+      <h2 class="text-3xl font-bold mb-3 neon-text">Module & Projekte</h2>
+      <div class="octra-cards grid grid-cols-1 md:grid-cols-3 gap-6">
         <div class="octra-card">Economy, Casino & Games</div>
         <div class="octra-card">Moderation & Management</div>
         <div class="octra-card">Clansystem & Leaderboards</div>
         <div class="octra-card">Musik, Verify, Statistik</div>
         <div class="octra-card">Web-Dashboard & Plugins</div>
+        <div class="octra-card">Weitere Module & Tools</div>
       </div>
     </section>
-    <section class="octra-section octra-slidein" style="animation-delay:0.6s;">
-      <h2>Jetzt loslegen</h2>
+    <section class="octra-section octra-slidein w-full max-w-2xl py-8" style="animation-delay:0.6s;">
+      <h2 class="text-3xl font-bold mb-3 neon-text">Plugin-Manager (Vorschau)</h2>
+      <div class="octra-plugin-preview flex flex-col gap-4">
+        <div class="octra-plugin-card flex items-center justify-between p-4 rounded-lg bg-gradient-to-r from-[#2d0a4a]/60 to-[#3a0066]/60 shadow-lg">
+          <div>
+            <h3 class="font-semibold text-lg">Economy-Modul</h3>
+            <p class="text-gray-300 text-sm">Virtuelle Wirtschaft, Shop, Auktionen, Leaderboards</p>
+          </div>
+          <button class="octra-btn octra-btn-sm octra-btn-glow">Aktivieren</button>
+        </div>
+        <div class="octra-plugin-card flex items-center justify-between p-4 rounded-lg bg-gradient-to-r from-[#2d0a4a]/60 to-[#3a0066]/60 shadow-lg">
+          <div>
+            <h3 class="font-semibold text-lg">Moderation</h3>
+            <p class="text-gray-300 text-sm">Warnungen, Mutes, Bans, Logging</p>
+          </div>
+          <button class="octra-btn octra-btn-sm octra-btn-outline">Deaktivieren</button>
+        </div>
+        <div class="octra-plugin-card flex items-center justify-between p-4 rounded-lg bg-gradient-to-r from-[#2d0a4a]/60 to-[#3a0066]/60 shadow-lg">
+          <div>
+            <h3 class="font-semibold text-lg">Musik & Unterhaltung</h3>
+            <p class="text-gray-300 text-sm">Musikplayer, Queue, DJ-Rolle, Trivia</p>
+          </div>
+          <button class="octra-btn octra-btn-sm octra-btn-outline">Deaktivieren</button>
+        </div>
+      </div>
+    </section>
+    <section class="octra-section octra-slidein w-full max-w-2xl py-8" style="animation-delay:0.8s;">
+      <h2 class="text-3xl font-bold mb-3 neon-text">Statistiken (Live-Demo)</h2>
+      <div class="octra-stats flex flex-wrap gap-6 justify-center">
+        <div class="octra-stat-card">
+          <span class="text-2xl font-bold">1.234</span>
+          <span class="text-sm text-gray-400">Discord-Server</span>
+        </div>
+        <div class="octra-stat-card">
+          <span class="text-2xl font-bold">8.765</span>
+          <span class="text-sm text-gray-400">Nutzer</span>
+        </div>
+        <div class="octra-stat-card">
+          <span class="text-2xl font-bold">42</span>
+          <span class="text-sm text-gray-400">Module</span>
+        </div>
+      </div>
+    </section>
+    <section class="octra-section octra-slidein w-full max-w-2xl py-8" style="animation-delay:1s;">
+      <h2 class="text-3xl font-bold mb-3 neon-text">Wiki & Dokumentation</h2>
+      <p class="text-gray-300 mb-4">Alle Module, Slash-Commands und Funktionen werden im <a href="wiki.html" class="underline neon-text">Wiki</a> ausführlich erklärt.</p>
+      <a href="wiki.html" class="octra-btn octra-btn-outline">Zum Wiki</a>
+    </section>
+    <section class="octra-section octra-slidein w-full max-w-2xl py-8" style="animation-delay:1.2s;">
+      <h2 class="text-3xl font-bold mb-3 neon-text">Jetzt loslegen</h2>
       <a href="auth.html" class="octra-btn octra-btn-glow">Kostenlos registrieren</a>
     </section>
   </main>
-  <footer class="octra-footer octra-fadein" style="animation-delay:0.8s;">
-    <p>&copy; 2025 Octra – Das ultimative All-in-One-System</p>
+  <footer class="octra-footer octra-fadein text-center py-6 mt-8 bg-gradient-to-t from-[#2d0a4a]/80 to-transparent">
+    <p class="text-gray-400">&copy; 2025 Octra – Das ultimative All-in-One-System</p>
+    <div class="flex justify-center gap-4 mt-2">
+      <a href="https://github.com/OctraBot" target="_blank" title="GitHub" class="hover:scale-110 transition-transform"><img src="assets/icons/github.svg" alt="GitHub" class="h-6"></a>
+      <a href="https://discord.gg/xyz" target="_blank" title="Discord" class="hover:scale-110 transition-transform"><img src="assets/icons/discord.svg" alt="Discord" class="h-6"></a>
+      <a href="https://guilded.gg/xyz" target="_blank" title="Guilded" class="hover:scale-110 transition-transform"><img src="assets/icons/guilded.svg" alt="Guilded" class="h-6"></a>
+      <a href="https://roblox.com/groups/xyz" target="_blank" title="Roblox" class="hover:scale-110 transition-transform"><img src="assets/icons/roblox.svg" alt="Roblox" class="h-6"></a>
+    </div>
   </footer>
+  <!-- Mobile Navigation Bar -->
+  <nav class="octra-mobile-nav fixed bottom-0 left-0 right-0 z-40 flex justify-around items-center bg-[#1a002b]/90 backdrop-blur-md py-2 border-t border-[#c7aaff22] md:hidden">
+    <a href="index.html" title="Home" class="octra-mobile-link"><img src="assets/icons/home.svg" alt="Home" class="h-7"></a>
+    <a href="projects.html" title="Projekte" class="octra-mobile-link"><img src="assets/icons/projects.svg" alt="Projekte" class="h-7"></a>
+    <a href="stats.html" title="Stats" class="octra-mobile-link"><img src="assets/icons/stats.svg" alt="Stats" class="h-7"></a>
+    <a href="profile.html" title="Profil" class="octra-mobile-link"><img src="assets/icons/profile.svg" alt="Profil" class="h-7"></a>
+    <a href="settings.html" title="Einstellungen" class="octra-mobile-link"><img src="assets/icons/eye.svg" alt="Einstellungen" class="h-7"></a>
+  </nav>
   <script src="scripts/animations.js"></script>
   <script src="scripts/particles.min.js"></script>
+  <script src="scripts/nav.js"></script>
   <script>
-    particlesJS.load('octra-ambient', 'scripts/particles-config.js');
+    // Mobile Navigation: Aktiven Tab hervorheben
+    document.addEventListener('DOMContentLoaded', function() {
+      const navLinks = document.querySelectorAll('.octra-mobile-nav a');
+      navLinks.forEach(link => {
+        if (window.location.pathname.endsWith(link.getAttribute('href'))) {
+          link.classList.add('active');
+          link.querySelector('img').style.filter = 'drop-shadow(0 0 32px #c7aaffcc) drop-shadow(0 0 8px #fff8)';
+        }
+      });
+    });
   </script>
-    <!-- Cookie-Consent-Modal -->
-    <div id="cookie-consent-modal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden z-50 pointer-events-none">
-        <div class="card bg-gray-900 bg-opacity-20 backdrop-blur-md p-8 rounded-lg shadow-lg max-w-md w-full pointer-events-auto">
-            <h2 class="text-2xl font-bold neon-text mb-4 text-center">Datenschutz-Einstellungen</h2>
-            <p class="text-gray-400 mb-4 text-center">Wir verwenden Cookies, um unsere Website zu verbessern. Bitte wähle deine Präferenzen.</p>
-            <div id="cookie-buttons" class="space-y-4">
-                <button id="accept-all-cookies" class="neon-button w-full py-2">Alle akzeptieren</button>
-                <button id="accept-necessary-cookies" class="neon-button w-full py-2">Nur notwendige akzeptieren</button>
-                <button id="customize-cookies" class="neon-button w-full py-2">Einstellungen anpassen</button>
-            </div>
-            <div id="cookie-settings" class="space-y-4 hidden">
-                <div class="flex items-center">
-                    <input type="checkbox" id="necessary-cookies" checked disabled class="mr-2">
-                    <label for="necessary-cookies" class="text-gray-400">Notwendige Cookies (immer aktiv)</label>
-                </div>
-                <div class="flex items-center">
-                    <input type="checkbox" id="analytics-cookies" class="mr-2">
-                    <label for="analytics-cookies" class="text-gray-400">Analytics-Cookies</label>
-                </div>
-                <div class="flex items-center">
-                    <input type="checkbox" id="marketing-cookies" class="mr-2">
-                    <label for="marketing-cookies" class="text-gray-400">Marketing-Cookies</label>
-                </div>
-                <button id="save-cookie-settings" class="neon-button w-full py-2">Einstellungen speichern</button>
-            </div>
-            <p class="text-gray-400 mt-4 text-center">
-                Weitere Infos in unserer <a href="./impressum.html#datenschutz" class="text-purple-400 hover:text-pink-500">Datenschutzerklärung</a>.
-            </p>
-        </div>
-    </div>
-
-    <!-- Mobile-Navbar -->
-    <nav class="fixed bottom-0 w-full bg-gray-900 bg-opacity-20 backdrop-blur-md p-4 flex justify-around md:hidden z-50 animate-nav-load">
-        <a href="./index.html" class="nav-link group">
-            <div class="nav-icon-container p-2 rounded-full transition-all duration-300 group-hover:bg-purple-900 group-hover:bg-opacity-30 group-hover:scale-110">
-                <img src="./assets/icons/home.svg" alt="Home" class="h-6 neon-icon">
-            </div>
-        </a>
-        <a href="./projects.html" class="nav-link group">
-            <div class="nav-icon-container p-2 rounded-full transition-all duration-300 group-hover:bg-purple-900 group-hover:bg-opacity-30 group-hover:scale-110">
-                <img src="./assets/icons/projects.svg" alt="Projekte" class="h-6 neon-icon">
-            </div>
-        </a>
-        <a href="./stats.html" class="nav-link group">
-            <div class="nav-icon-container p-2 rounded-full transition-all duration-300 group-hover:bg-purple-900 group-hover:bg-opacity-30 group-hover:scale-110">
-                <img src="./assets/icons/stats.svg" alt="Stats" class="h-6 neon-icon">
-            </div>
-        </a>
-        <a href="./impressum.html" class="nav-link group">
-            <div class="nav-icon-container p-2 rounded-full transition-all duration-300 group-hover:bg-purple-900 group-hover:bg-opacity-30 group-hover:scale-110">
-                <img src="./assets/icons/info.svg" alt="Impressum" class="h-6 neon-icon">
-            </div>
-        </a>
-        <a href="https://x.com" target="_blank" class="nav-link group">
-            <div class="nav-icon-container p-2 rounded-full transition-all duration-300 group-hover:bg-purple-900 group-hover:bg-opacity-30 group-hover:scale-110">
-                <img src="./assets/icons/twitter.svg" alt="Twitter/X" class="h-6 neon-icon">
-            </div>
-        </a>
-        <button id="profile-icon-mobile" class="nav-link group">
-            <div class="nav-icon-container p-2 rounded-full transition-all duration-300 group-hover:bg-purple-900 group-hover:bg-opacity-30 group-hover:scale-110">
-                <img src="./assets/icons/profile.svg" alt="Profile" class="h-6 neon-icon">
-            </div>
-        </button>
-    </nav>
-    <div id="profile-popup" class="hidden fixed bottom-16 left-1/2 transform -translate-x-1/2 w-48 bg-gray-900 bg-opacity-20 backdrop-blur-md rounded-lg shadow-lg z-50">
-        <a href="./profile.html" class="block px-4 py-2 text-white neon-text hover:bg-purple-900 hover:bg-opacity-30">Profile</a>
-        <a href="./settings.html" class="block px-4 py-2 text-white neon-text hover:bg-purple-900 hover:bg-opacity-30">Settings</a>
-        <a href="./auth.html" class="block px-4 py-2 text-white neon-text hover:bg-purple-900 hover:bg-opacity-30">Login</a>
-        <button id="logout-button" class="block w-full text-left px-4 py-2 text-white neon-text hover:bg-purple-900 hover:bg-opacity-30">Logout</button>
-    </div>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 bg-opacity-20 backdrop-blur-md p-4 relative z-10">
-        <div class="container mx-auto px-2 grid grid-cols-1 md:grid-cols-3 gap-6 text-gray-400">
-            <div>
-                <h3 class="text-purple-500 font-bold mb-2 neon-text scroll-animate" data-animation="typing">Socials</h3>
-                <a href="https://discord.com" class="block scroll-animate" data-animation="fade"><img src="./assets/icons/discord.svg" alt="Discord" class="h-5 inline mr-2 neon-icon">Discord</a>
-                <a href="https://github.com" class="block scroll-animate" data-animation="fade"><img src="./assets/icons/github.svg" alt="GitHub" class="h-5 inline mr-2 neon-icon">GitHub</a>
-            </div>
-            <div>
-                <h3 class="text-purple-500 font-bold mb-2 neon-text scroll-animate" data-animation="typing">Navigation</h3>
-                <a href="./index.html" class="block neon-text scroll-animate" data-animation="fade">Home</a>
-                <a href="./projects.html" class="block neon-text scroll-animate" data-animation="fade">Projekte</a>
-                <a href="./stats.html" class="block neon-text scroll-animate" data-animation="fade">Stats</a>
-                <a href="./impressum.html" class="block neon-text scroll-animate" data-animation="fade">Impressum</a>
-            </div>
-            <div>
-                <h3 class="text-purple-500 font-bold mb-2 neon-text scroll-animate" data-animation="typing">Rechtliches</h3>
-                <a href="./impressum.html" class="block neon-text scroll-animate" data-animation="fade">Impressum</a>
-                <a href="./impressum.html#datenschutz" class="block neon-text scroll-animate" data-animation="fade">Datenschutz</a>
-            </div>
-        </div>
-        <div class="border-t border-purple-500 mt-4 pt-2 text-center">
-            <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="neon-button py-2 scroll-animate" data-animation="fade">Nach oben</button>
-            <p class="mt-2 text-gray-400 scroll-animate" data-animation="fade">© 2025 OCTRA. Alle Rechte vorbehalten.</p>
-        </div>
-    </footer>
-
-    <!-- Skripte -->
-    <script defer src="./scripts/particles.js"></script>
-    <script defer src="./scripts/particles-config.js"></script>
-    <script defer src="./scripts/cookie.js"></script>
-    <script defer src="./scripts/animations.js"></script>
-    <script defer src="./scripts/nav.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-            document.querySelectorAll('nav a').forEach(link => {
-                const href = link.getAttribute('href')?.replace(/^\.\//, '');
-                if (href === currentPath) {
-                    link.classList.add('active');
-                }
-            });
-
-            // Debugging
-            console.log('custom.css loaded:', !!document.querySelector('link[href="./styles/custom.css"]'));
-            console.log('particles.js loaded:', !!document.querySelector('script[src="./scripts/particles.js"]'));
-            console.log('nav.js loaded:', !!document.querySelector('script[src="./scripts/nav.js"]'));
-            console.log('animations.js loaded:', !!document.querySelector('script[src="./scripts/animations.js"]'));
-            console.log('Icons loaded:', document.querySelectorAll('nav img').length);
-            console.log('Particles div:', !!document.getElementById('particles-js'));
-        });
-    </script>
+  <!-- Cookie-Consent-Modal -->
+  <div id="cookie-consent-modal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden z-50 pointer-events-none">
+      <div class="card bg-gray-900 bg-opacity-20 backdrop-blur-md p-8 rounded-lg shadow-lg max-w-md w-full pointer-events-auto">
+          <h2 class="text-2xl font-bold neon-text mb-4 text-center">Datenschutz-Einstellungen</h2>
+          <p class="text-gray-400 mb-4 text-center">Wir verwenden Cookies, um unsere Website zu verbessern. Bitte wähle deine Präferenzen.</p>
+          <div id="cookie-buttons" class="space-y-4">
+              <button id="accept-all-cookies" class="neon-button w-full py-2">Alle akzeptieren</button>
+              <button id="accept-necessary-cookies" class="neon-button w-full py-2">Nur notwendige akzeptieren</button>
+              <button id="customize-cookies" class="neon-button w-full py-2">Einstellungen anpassen</button>
+          </div>
+          <div id="cookie-settings" class="space-y-4 hidden">
+              <div class="flex items-center">
+                  <input type="checkbox" id="necessary-cookies" checked disabled class="mr-2">
+                  <label for="necessary-cookies" class="text-gray-400">Notwendige Cookies (immer aktiv)</label>
+              </div>
+              <div class="flex items-center">
+                  <input type="checkbox" id="analytics-cookies" class="mr-2">
+                  <label for="analytics-cookies" class="text-gray-400">Analytics-Cookies</label>
+              </div>
+              <div class="flex items-center">
+                  <input type="checkbox" id="marketing-cookies" class="mr-2">
+                  <label for="marketing-cookies" class="text-gray-400">Marketing-Cookies</label>
+              </div>
+              <button id="save-cookie-settings" class="neon-button w-full py-2">Einstellungen speichern</button>
+          </div>
+      </div>
+  </div>
 </body>
 </html>

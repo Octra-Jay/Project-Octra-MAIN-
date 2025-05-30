@@ -59,7 +59,7 @@
 
     <!-- Auth-Bereich -->
     <main class="min-h-screen flex flex-col justify-center items-center relative z-10 pt-20 pb-20 px-4 animate-hero-load">
-        <h1 class="text-4xl font-bold neon-text mb-8 text-center">Anmeldung</h1>
+        <h1 class="text-4xl font-bold neon-text mb-8 text-center">Anmeldung & Registrierung</h1>
         <div class="card bg-gray-900 bg-opacity-20 backdrop-blur-md p-8 rounded-lg shadow-lg max-w-md w-full">
             <!-- Tabs -->
             <div class="flex justify-center mb-6">
@@ -109,6 +109,11 @@
                     <button type="button" id="register-password-confirm-toggle" class="absolute right-3 top-10 transform -translate-y-1/2">
                         <img src="./assets/icons/eye.svg" alt="Show Password" class="h-5 neon-icon toggle-icon">
                     </button>
+                </div>
+                <div class="input-field">
+                    <label for="register-referral" class="block text-sm text-gray-400">Referral-Code (optional)</label>
+                    <input type="text" id="register-referral" class="w-full bg-gray-800 border border-purple-500 rounded-md p-2 text-white placeholder-gray-500" placeholder="Referral-Code eingeben">
+                    <a href="referral.html" class="block text-xs text-purple-400 hover:text-pink-400 mt-1">Mehr zum Referral-Programm</a>
                 </div>
                 <button type="submit" class="neon-button w-full py-2">Registrieren</button>
             </form>

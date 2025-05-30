@@ -7,115 +7,123 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="./styles/custom.css">
 </head>
-<body class="bg-black text-white font-poppins">
-  <!-- Partikel-Hintergrund -->
-  <div id="particles-js" class="fixed inset-0 z-0"></div>
-
-  <!-- Hero-Section -->
-  <section class="min-h-screen flex flex-col justify-center items-center relative z-10 pt-8 px-4 animate-hero-load">
-    <div class="container mx-auto text-center bg-gray-900 bg-opacity-20 backdrop-blur-md rounded-lg p-8">
-      <h1 class="text-5xl md:text-7xl font-bold text-white neon-text animate-pulse-glow">Statistiken</h1>
-      <p class="text-xl md:text-2xl text-gray-300 mt-4 max-w-3xl mx-auto animate-fade-in">
-        Tauche ein in die Zahlenwelt von OCTRA und deinem Profil.
-      </p>
+<body class="octra-bg min-h-screen flex flex-col font-sans text-white bg-gradient-to-br from-[#1a002b] via-[#2d0a4a] to-[#3a0066]">
+  <div id="octra-ambient" class="fixed inset-0 -z-10 pointer-events-none"></div>
+  <header class="octra-header py-6 animate-nav-load bg-gradient-to-b from-[#2d0a4a]/80 to-transparent">
+    <div class="flex flex-col items-center gap-3">
+      <a href="index.html" class="octra-logo flex items-center gap-2">
+        <img src="assets/logo/logo-anim.gif" alt="Octra Logo" height="64" class="drop-shadow-neon animate-logo-fadein">
+        <span class="text-3xl md:text-4xl font-extrabold neon-text tracking-wide">OCTRA</span>
+      </a>
+      <nav class="octra-nav flex flex-wrap gap-3 justify-center mt-3 text-lg">
+        <a href="index.html" class="octra-nav-link">Home</a>
+        <a href="projects.html" class="octra-nav-link">Projekte</a>
+        <a href="releases.html" class="octra-nav-link">Releases</a>
+        <a href="info.html" class="octra-nav-link">Informationen</a>
+        <a href="stats.html" class="octra-nav-link">Stats</a>
+        <a href="server.html" class="octra-nav-link">Server</a>
+        <a href="wiki.html" class="octra-nav-link">Wiki</a>
+        <a href="credits.html" class="octra-nav-link">Credits</a>
+        <a href="impressum.html" class="octra-nav-link">Impressum</a>
+      </nav>
     </div>
-  </section>
-
-  <!-- Statistik-Section -->
-  <section class="py-20 relative z-10">
-    <div class="container mx-auto px-4">
-      <h2 class="text-4xl font-bold text-white neon-text mb-12 text-center animate-fade-in">Unsere Statistiken</h2>
-      <div class="space-y-6 max-w-4xl mx-auto md:grid md:grid-cols-2 md:gap-6 md:space-y-0">
-        <!-- Karte 1 -->
-        <div class="card bg-gray-900 bg-opacity-20 backdrop-blur-md rounded-lg overflow-hidden animate-card-load" style="--delay: 0.2s;">
-          <button class="w-full text-left p-6 flex justify-between items-center neon-text hover:bg-gray-800 hover:bg-opacity-20 transition-all duration-300" onclick="toggleAccordion('website-stats')">
-            <h3 class="text-2xl font-bold text-white">Website- & Server-Statistiken</h3>
-            <svg id="website-stats-icon" class="w-6 h-6 text-purple-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </button>
-          <div id="website-stats" class="accordion-content p-6 text-gray-300 max-h-0 opacity-0 overflow-hidden transition-all duration-500">
-            <ul class="space-y-4">
-              <li><strong>Projekte:</strong> 100+</li>
-              <li><strong>Nutzer:</strong> 10.000+</li>
-              <li><strong>Server-Uptime:</strong> 99,9%</li>
-              <li><strong>API-Calls:</strong> 1.000.000+</li>
-            </ul>
-          </div>
+  </header>
+  <main class="octra-main flex-1 flex flex-col items-center justify-center px-2 md:px-0">
+    <section class="octra-hero octra-section octra-slidein w-full max-w-3xl text-center py-12">
+      <h1 class="octra-glow text-5xl md:text-6xl font-extrabold mb-4 tracking-tight">OCTRA <span class="neon-text">Statistiken</span></h1>
+      <p class="octra-lead text-xl md:text-2xl mb-6 text-gray-200">Tauche ein in die Zahlenwelt von OCTRA und deinem Profil.</p>
+    </section>
+    <section class="octra-section octra-slidein w-full max-w-4xl py-8" style="animation-delay:0.2s;">
+      <h2 class="text-3xl font-bold mb-3 neon-text">Unsere Statistiken</h2>
+      <div class="octra-stats flex flex-wrap gap-6 justify-center">
+        <div class="octra-stat-card">
+          <span class="text-2xl font-bold">1.234</span>
+          <span class="text-sm text-gray-400">Discord-Server</span>
         </div>
-        <!-- Karte 2 -->
-        <div class="card bg-gray-900 bg-opacity-20 backdrop-blur-md rounded-lg overflow-hidden animate-card-load" style="--delay: 0.4s;">
-          <button class="w-full text-left p-6 flex justify-between items-center neon-text hover:bg-gray-800 hover:bg-opacity-20 transition-all duration-300" onclick="toggleAccordion('profile-stats')">
-            <h3 class="text-2xl font-bold text-white">Persönliche Profil-Statistiken</h3>
-            <svg id="profile-stats-icon" class="w-6 h-6 text-purple-400 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </button>
-          <div id="profile-stats" class="accordion-content p-6 text-gray-300 max-h-0 opacity-0 overflow-hidden transition-all duration-500">
-            <ul class="space-y-4">
-              <li><strong>Benutzername:</strong> [Dein Name]</li>
-              <li><strong>Projekte:</strong> 5</li>
-              <li><strong>Beiträge:</strong> 20</li>
-              <li><strong>Mitglied seit:</strong> Januar 2025</li>
-            </ul>
-          </div>
+        <div class="octra-stat-card">
+          <span class="text-2xl font-bold">8.765</span>
+          <span class="text-sm text-gray-400">Nutzer</span>
+        </div>
+        <div class="octra-stat-card">
+          <span class="text-2xl font-bold">42</span>
+          <span class="text-sm text-gray-400">Module</span>
         </div>
       </div>
+    </section>
+    <section class="octra-section octra-slidein w-full max-w-4xl py-8" style="animation-delay:0.4s;">
+      <h2 class="text-3xl font-bold mb-3 neon-text">Persönliche Statistiken (Demo)</h2>
+      <div class="octra-stats flex flex-wrap gap-6 justify-center">
+        <div class="octra-stat-card">
+          <span class="text-2xl font-bold">Level 12</span>
+          <span class="text-sm text-gray-400">Dein Level</span>
+        </div>
+        <div class="octra-stat-card">
+          <span class="text-2xl font-bold">5.000</span>
+          <span class="text-sm text-gray-400">Coins</span>
+        </div>
+        <div class="octra-stat-card">
+          <span class="text-2xl font-bold">7</span>
+          <span class="text-sm text-gray-400">Abzeichen</span>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="octra-footer octra-fadein text-center py-6 mt-8 bg-gradient-to-t from-[#2d0a4a]/80 to-transparent">
+    <p class="text-gray-400">&copy; 2025 Octra – Das ultimative All-in-One-System</p>
+    <div class="flex justify-center gap-4 mt-2">
+      <a href="https://github.com/OctraBot" target="_blank" title="GitHub" class="hover:scale-110 transition-transform"><img src="assets/icons/github.svg" alt="GitHub" class="h-6"></a>
+      <a href="https://discord.gg/xyz" target="_blank" title="Discord" class="hover:scale-110 transition-transform"><img src="assets/icons/discord.svg" alt="Discord" class="h-6"></a>
+      <a href="https://guilded.gg/xyz" target="_blank" title="Guilded" class="hover:scale-110 transition-transform"><img src="assets/icons/guilded.svg" alt="Guilded" class="h-6"></a>
+      <a href="https://roblox.com/groups/xyz" target="_blank" title="Roblox" class="hover:scale-110 transition-transform"><img src="assets/icons/roblox.svg" alt="Roblox" class="h-6"></a>
     </div>
-  </section>
-
-  <!-- Ambient Container -->
-  <div id="octra-ambient"></div>
-
-  <!-- Mobile-Navbar -->
-  <nav class="octra-mobile-nav">
-    <a href="index.html"><img src="assets/icons/home.svg" alt="Home"></a>
-    <a href="projects.html"><img src="assets/icons/projects.svg" alt="Projekte"></a>
-    <a href="stats.html"><img src="assets/icons/stats.svg" alt="Stats"></a>
-    <a href="impressum.html"><img src="assets/icons/info.svg" alt="Impressum"></a>
-    <a href="profile.html"><img src="assets/icons/profile.svg" alt="Profil"></a>
-  </nav>
-
-  <!-- Footer -->
-  <footer class="bg-gray-900 bg-opacity-20 backdrop-blur-md p-3 relative z-10 text-center text-gray-400">
-    <p>&copy; 2025 OCTRA. Alle Rechte vorbehalten.</p>
   </footer>
-
-  <!-- Skripte -->
-  <script defer src="./scripts/particles.js"></script>
-  <script defer src="./scripts/particles-config.js"></script>
+  <nav class="octra-mobile-nav fixed bottom-0 left-0 right-0 z-40 flex justify-around items-center bg-[#1a002b]/90 backdrop-blur-md py-2 border-t border-[#c7aaff22] md:hidden">
+    <a href="index.html" title="Home" class="octra-mobile-link"><img src="assets/icons/home.svg" alt="Home" class="h-7"></a>
+    <a href="projects.html" title="Projekte" class="octra-mobile-link"><img src="assets/icons/projects.svg" alt="Projekte" class="h-7"></a>
+    <a href="stats.html" title="Stats" class="octra-mobile-link"><img src="assets/icons/stats.svg" alt="Stats" class="h-7"></a>
+    <a href="profile.html" title="Profil" class="octra-mobile-link"><img src="assets/icons/profile.svg" alt="Profil" class="h-7"></a>
+    <a href="settings.html" title="Einstellungen" class="octra-mobile-link"><img src="assets/icons/eye.svg" alt="Einstellungen" class="h-7"></a>
+  </nav>
   <script src="scripts/animations.js"></script>
   <script src="scripts/particles.min.js"></script>
+  <script src="scripts/nav.js"></script>
   <script>
-    particlesJS.load('octra-ambient', 'scripts/particles-config.js');
-
-    function toggleAccordion(id) {
-      const content = document.getElementById(id);
-      const icon = document.getElementById(id + '-icon');
-      const isHidden = content.classList.contains('max-h-0');
-      content.classList.toggle('max-h-0', !isHidden);
-      content.classList.toggle('opacity-0', !isHidden);
-      content.classList.toggle('max-h-[500px');
-], isHidden);
-      icon.classList.toggle('rotate-180', isHidden);
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-      document.querySelectorAll('nav a').forEach(link => {
-        const href = link.getAttribute('href').replace(/^\//, '');
-        if (href === currentPath) {
+    document.addEventListener('DOMContentLoaded', function() {
+      const navLinks = document.querySelectorAll('.octra-mobile-nav a');
+      navLinks.forEach(link => {
+        if (window.location.pathname.endsWith(link.getAttribute('href'))) {
           link.classList.add('active');
+          link.querySelector('img').style.filter = 'drop-shadow(0 0 32px #c7aaffcc) drop-shadow(0 0 8px #fff8)';
         }
       });
-
-      // Debugging
-      console.log('custom.css loaded:', !!document.querySelector('link[href="./styles/custom.css"]'));
-      console.log('particles.js loaded:', !!document.querySelector('script[src="./scripts/particles.js"]'));
-      console.log('particles-config.js loaded:', !!document.querySelector('script[src="./scripts/particles-config.js"]'));
-      console.log('Icons loaded:', document.querySelectorAll('nav img').length);
-      console.log('Particles div:', !!document.getElement.getElementById('particles-js'));
     });
   </script>
+  <!-- Cookie-Consent-Modal -->
+  <div id="cookie-consent-modal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden z-50 pointer-events-none">
+      <div class="card bg-gray-900 bg-opacity-20 backdrop-blur-md p-8 rounded-lg shadow-lg max-w-md w-full pointer-events-auto">
+          <h2 class="text-2xl font-bold neon-text mb-4 text-center">Datenschutz-Einstellungen</h2>
+          <p class="text-gray-400 mb-4 text-center">Wir verwenden Cookies, um unsere Website zu verbessern. Bitte wähle deine Präferenzen.</p>
+          <div id="cookie-buttons" class="space-y-4">
+              <button id="accept-all-cookies" class="neon-button w-full py-2">Alle akzeptieren</button>
+              <button id="accept-necessary-cookies" class="neon-button w-full py-2">Nur notwendige akzeptieren</button>
+              <button id="customize-cookies" class="neon-button w-full py-2">Einstellungen anpassen</button>
+          </div>
+          <div id="cookie-settings" class="space-y-4 hidden">
+              <div class="flex items-center">
+                  <input type="checkbox" id="necessary-cookies" checked disabled class="mr-2">
+                  <label for="necessary-cookies" class="text-gray-400">Notwendige Cookies (immer aktiv)</label>
+              </div>
+              <div class="flex items-center">
+                  <input type="checkbox" id="analytics-cookies" class="mr-2">
+                  <label for="analytics-cookies" class="text-gray-400">Analytics-Cookies</label>
+              </div>
+              <div class="flex items-center">
+                  <input type="checkbox" id="marketing-cookies" class="mr-2">
+                  <label for="marketing-cookies" class="text-gray-400">Marketing-Cookies</label>
+              </div>
+              <button id="save-cookie-settings" class="neon-button w-full py-2">Einstellungen speichern</button>
+          </div>
+      </div>
+  </div>
 </body>
 </html>
