@@ -16,17 +16,6 @@
         <img src="assets/logo/logo-anim.gif" alt="Octra Logo" height="64" class="drop-shadow-neon animate-logo-fadein">
         <span class="text-3xl md:text-4xl font-extrabold neon-text tracking-wide">OCTRA</span>
       </a>
-      <nav class="octra-nav flex flex-wrap gap-3 justify-center mt-3 text-lg">
-        <a href="#" class="octra-nav-link">Home</a>
-        <a href="#" class="octra-nav-link">Projekte</a>
-        <a href="#" class="octra-nav-link">Releases</a>
-        <a href="#" class="octra-nav-link">Informationen</a>
-        <a href="#" class="octra-nav-link">Stats</a>
-        <a href="#" class="octra-nav-link">Server</a>
-        <a href="#" class="octra-nav-link">Wiki</a>
-        <a href="#" class="octra-nav-link">Credits</a>
-        <a href="#" class="octra-nav-link">Impressum</a>
-      </nav>
     </div>
   </header>
   <!-- Main Content Placeholder -->
@@ -51,29 +40,8 @@
       <a href="#" target="_blank" title="Roblox" class="hover:scale-110 transition-transform"><img src="assets/icons/roblox.svg" alt="Roblox" class="h-6"></a>
     </div>
   </footer>
-  <!-- Mobile Navigation Bar (immer sichtbar, immer fixed) -->
-  <div style="height:56px;" class="md:hidden"></div> <!-- Platzhalter für mobile Navbar, verhindert Überdeckung -->
-  <nav class="octra-mobile-nav fixed bottom-0 left-0 right-0 z-40 flex justify-around items-center bg-[#1a002b]/90 backdrop-blur-md py-2 border-t border-[#c7aaff22] md:hidden">
-    <a href="#" title="Home" class="octra-mobile-link"><img src="assets/icons/home.svg" alt="Home" class="h-7"></a>
-    <a href="#" title="Projekte" class="octra-mobile-link"><img src="assets/icons/projects.svg" alt="Projekte" class="h-7"></a>
-    <a href="#" title="Stats" class="octra-mobile-link"><img src="assets/icons/stats.svg" alt="Stats" class="h-7"></a>
-    <a href="#" title="Profil" class="octra-mobile-link"><img src="assets/icons/profile.svg" alt="Profil" class="h-7"></a>
-    <a href="#" title="Einstellungen" class="octra-mobile-link"><img src="assets/icons/eye.svg" alt="Einstellungen" class="h-7"></a>
-  </nav>
   <script src="scripts/animations.js"></script>
   <script src="scripts/particles.min.js"></script>
   <script src="scripts/nav.js"></script>
-  <script>
-    // Mobile Navigation: Aktiven Tab hervorheben
-    document.addEventListener('DOMContentLoaded', function() {
-      const navLinks = document.querySelectorAll('.octra-mobile-nav a');
-      navLinks.forEach(link => {
-        if (window.location.pathname.endsWith(link.getAttribute('href'))) {
-          link.classList.add('active');
-          link.querySelector('img').style.filter = 'drop-shadow(0 0 32px #c7aaffcc) drop-shadow(0 0 8px #fff8)';
-        }
-      });
-    });
-  </script>
 </body>
 </html>
