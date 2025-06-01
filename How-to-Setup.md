@@ -109,3 +109,57 @@ Damit ist die komplette Datenbankstruktur für das Referral-Programm und die Use
 - Für Discord/Guilded-Login: OAuth-Redirect-URLs in Supabase eintragen.
 
 Fertig! Dein Octra-System ist jetzt mit Supabase-Datenbank und Referral-Programm einsatzbereit.
+
+---
+
+## 10. Fixierte mobile Navbar in jeder HTML-Datei
+
+Um eine fixierte mobile Navbar zu jeder `.html`-Datei hinzuzufügen, die direkt am Displayrand (nicht am Seitenrand) sitzt, gehe wie folgt vor:
+
+1. Füge folgenden HTML-Code direkt nach `<body>` in jede `.html`-Datei ein:
+
+```html
+<nav class="mobile-navbar">
+  <!-- Deine Navigationslinks -->
+  <a href="/">Home</a>
+  <a href="/about.html">About</a>
+  <a href="/profile.html">Profil</a>
+</nav>
+```
+
+2. Ergänze im `<head>` deiner `.html`-Dateien (oder in deiner globalen CSS-Datei) folgendes CSS:
+
+```css
+.mobile-navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 56px;
+  background: #222;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1000;
+  border-top: 1px solid #444;
+  /* Optional: für abgerundete Ecken am Displayrand */
+  border-radius: 0;
+  box-sizing: border-box;
+}
+.mobile-navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1em;
+  padding: 0.5em 1em;
+}
+@media (min-width: 600px) {
+  .mobile-navbar {
+    display: none;
+  }
+}
+```
+
+**Hinweis:**  
+- Die Navbar ist immer am unteren Displayrand fixiert, unabhängig vom Seiteninhalt.
+- Passe die Links und das Design nach Bedarf an.
+- Für Desktop kann die Navbar per Media Query ausgeblendet werden.
