@@ -79,6 +79,14 @@
 
   <!-- Einstellungen-Bereich -->
   <main class="min-h-screen flex flex-col justify-center items-center bg-black pt-20 pb-20 px-4">
+    <!--
+    OCTRA – Einstellungen & Datenschutz
+
+    - Benutzer kann Cookie- und Datenschutz-Einstellungen verwalten
+    - Mobile First, modernes UI
+    - Automatische Entwickler-Benachrichtigung bei Releases (siehe Kommentar unten)
+    - Ziel: Transparenz, Kontrolle und Sicherheit für User & Team
+    -->
     <h1 class="text-4xl font-bold text-purple-500 mb-8 text-center card">Einstellungen</h1>
     <div class="card p-8 rounded-lg shadow-lg max-w-md w-full relative z-20">
       <!-- Fehleranzeige -->
@@ -202,5 +210,17 @@
   <script src="././js/auth.js"></script>
   <script src="scripts/particles.min.js"></script>
   <script>particlesJS.load('octra-ambient', 'scripts/particles-config.js');</script>
+
+  <!-- Entwickler-Benachrichtigung -->
+    <!--
+      Automatische E-Mail-Benachrichtigung:
+      Nach jedem Release oder wichtigen Update erhalten folgende Entwickler eine Statusmail von OCTRA:
+      - jayden_octra@yahoo.com
+      - stavro_octra@yahoo.com
+      - benedikt_octra@yahoo.com
+      Die E-Mail enthält eine Zusammenfassung aller Änderungen, den aktuellen Stand und Zukunftspläne.
+      (Die technische Umsetzung erfolgt serverseitig, z.B. via Node.js/Backend oder externem Service.)
+    -->
+    <!-- Ende Entwickler-Benachrichtigung -->
 </body>
 </html>
