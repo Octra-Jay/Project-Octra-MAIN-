@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OCTRA – Template</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/custom.css">
+</head>
+<body class="octra-bg min-h-screen flex flex-col font-sans text-white bg-gradient-to-br from-[#1a002b] via-[#2d0a4a] to-[#3a0066]">
+  <div id="octra-ambient" class="fixed inset-0 -z-10 pointer-events-none"></div>
+  <!-- Header & Desktop Navigation -->
+  <header class="octra-header py-6 animate-nav-load bg-gradient-to-b from-[#2d0a4a]/80 to-transparent">
+    <div class="flex flex-col items-center gap-3">
+      <a href="index.html" class="octra-logo flex items-center gap-2">
+        <img src="assets/logo/logo-anim.gif" alt="Octra Logo" height="64" class="drop-shadow-neon animate-logo-fadein">
+        <span class="text-3xl md:text-4xl font-extrabold neon-text tracking-wide">OCTRA</span>
+      </a>
+      <nav class="octra-nav flex flex-wrap gap-3 justify-center mt-3 text-lg">
+        <a href="#" class="octra-nav-link">Home</a>
+        <a href="#" class="octra-nav-link">Projekte</a>
+        <a href="#" class="octra-nav-link">Releases</a>
+        <a href="#" class="octra-nav-link">Informationen</a>
+        <a href="#" class="octra-nav-link">Stats</a>
+        <a href="#" class="octra-nav-link">Server</a>
+        <a href="#" class="octra-nav-link">Wiki</a>
+        <a href="#" class="octra-nav-link">Credits</a>
+        <a href="#" class="octra-nav-link">Impressum</a>
+      </nav>
+    </div>
+  </header>
+  <!-- Main Content Placeholder -->
+  <main class="octra-main flex-1 flex flex-col items-center justify-center px-2 md:px-0">
+    <section class="octra-section octra-slidein w-full max-w-4xl py-12 text-center">
+      <h1 class="octra-glow text-4xl md:text-5xl font-bold mb-4 tracking-tight">Seiten-Titel</h1>
+      <p class="octra-lead text-lg md:text-xl mb-6 text-gray-200">Hier kommt der Seiteninhalt als Platzhalter.</p>
+      <!-- Weitere Platzhalter-Sections -->
+      <div class="octra-card bg-gradient-to-r from-[#2d0a4a]/60 to-[#3a0066]/60 p-6 rounded-lg shadow-lg mb-6">
+        <h2 class="text-2xl font-bold neon-text mb-2">Platzhalter-Card</h2>
+        <p class="text-gray-400">Hier kann ein Modul, eine Info oder ein Feature stehen.</p>
+      </div>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer class="octra-footer octra-fadein text-center py-6 mt-8 bg-gradient-to-t from-[#2d0a4a]/80 to-transparent">
+    <p class="text-gray-400">&copy; 2025 Octra – Das ultimative All-in-One-System</p>
+    <div class="flex justify-center gap-4 mt-2">
+      <a href="#" target="_blank" title="GitHub" class="hover:scale-110 transition-transform"><img src="assets/icons/github.svg" alt="GitHub" class="h-6"></a>
+      <a href="#" target="_blank" title="Discord" class="hover:scale-110 transition-transform"><img src="assets/icons/discord.svg" alt="Discord" class="h-6"></a>
+      <a href="#" target="_blank" title="Guilded" class="hover:scale-110 transition-transform"><img src="assets/icons/guilded.svg" alt="Guilded" class="h-6"></a>
+      <a href="#" target="_blank" title="Roblox" class="hover:scale-110 transition-transform"><img src="assets/icons/roblox.svg" alt="Roblox" class="h-6"></a>
+    </div>
+  </footer>
+  <!-- Mobile Navigation Bar -->
+  <nav class="octra-mobile-nav fixed bottom-0 left-0 right-0 z-40 flex justify-around items-center bg-[#1a002b]/90 backdrop-blur-md py-2 border-t border-[#c7aaff22] md:hidden">
+    <a href="#" title="Home" class="octra-mobile-link"><img src="assets/icons/home.svg" alt="Home" class="h-7"></a>
+    <a href="#" title="Projekte" class="octra-mobile-link"><img src="assets/icons/projects.svg" alt="Projekte" class="h-7"></a>
+    <a href="#" title="Stats" class="octra-mobile-link"><img src="assets/icons/stats.svg" alt="Stats" class="h-7"></a>
+    <a href="#" title="Profil" class="octra-mobile-link"><img src="assets/icons/profile.svg" alt="Profil" class="h-7"></a>
+    <a href="#" title="Einstellungen" class="octra-mobile-link"><img src="assets/icons/eye.svg" alt="Einstellungen" class="h-7"></a>
+  </nav>
+  <script src="scripts/animations.js"></script>
+  <script src="scripts/particles.min.js"></script>
+  <script src="scripts/nav.js"></script>
+  <script>
+    // Mobile Navigation: Aktiven Tab hervorheben
+    document.addEventListener('DOMContentLoaded', function() {
+      const navLinks = document.querySelectorAll('.octra-mobile-nav a');
+      navLinks.forEach(link => {
+        if (window.location.pathname.endsWith(link.getAttribute('href'))) {
+          link.classList.add('active');
+          link.querySelector('img').style.filter = 'drop-shadow(0 0 32px #c7aaffcc) drop-shadow(0 0 8px #fff8)';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
